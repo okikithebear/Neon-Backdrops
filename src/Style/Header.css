@@ -1,0 +1,57 @@
+/* Styles for the mobile menu */
+.fixed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-lg {
+  padding: 16px;
+}
+
+.bg-opacity-75 {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.hover\:text-yellow-300:hover {
+  color: #fdd835;
+}
+
+.hover\:bg-yellow-500:hover {
+  background-color: #fdd835;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:hidden {
+    display: none;
+  }
+}
+
+/* Tailwind CSS classes for transition animations */
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s ease-out;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transform {
+  transform: scale(0.9);
+}
