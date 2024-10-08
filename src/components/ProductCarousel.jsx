@@ -16,27 +16,27 @@ const ProductCarousel = () => {
     {
       image: img1,
       title: 'Backdrop 1',
-      price: '₦99',
+      price: '₦99,000',
     },
     {
       image: img2,
       title: 'Backdrop 2',
-      price: '₦89',
+      price: '₦89,000',
     },
     {
       image: img3,
       title: 'Backdrop 3',
-      price: '₦120',
+      price: '₦120,000',
     },
     {
       image: img4,
       title: 'Backdrop 4',
-      price: '₦150',
+      price: '₦150,000',
     },
     {
       image: img5,
       title: 'Backdrop 5',
-      price: '₦110',
+      price: '₦110,000',
     },
   ];
 
@@ -104,8 +104,8 @@ const ProductCarousel = () => {
                 {/* Product Title */}
                 <p className="text-lg font-semibold text-gray-800">{product.title}</p>
                 {/* Price Tag */}
-                <p className="text-xl font-bold text-gray-900 mt-2">
-                  <span className="text-lg align-top text-indigo-500"></span>{product.price}
+                <p className="text-xl font-bold text-gray-900 mt-2 mr-1">
+                  {product.price}
                 </p>
               </div>
             </div>
