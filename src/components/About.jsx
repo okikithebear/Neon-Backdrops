@@ -47,28 +47,25 @@ const AboutSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-3xl md:text-4xl font-bold uppercase font-headline"
+            className="text-3xl md:text-4xl  uppercase font-mulish"
           >
-            About Neon Backdrops
+           Crafted just for you with a decade of artistic passion and expertise.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-base md:text-lg font-headline"
+            className="text-base md:text-lg font-mulish"
           >
-            Our founder started painting his own backdrops because he wanted to create signature photographs. Today, Neon Backdrops shares that love with creators all over the world. With over 10 years of artistic experience, we’re dedicated to hand-crafting unique, high-quality backdrops that bring every creative vision to life.
+            Our founder began painting his own backdrops to craft unique, signature photographs. Today, Neon Backdrops continues that passion, bringing one-of-a-kind creations to photographers and creators worldwide.
           </motion.p>
-          <motion.button
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-white text-black py-2 px-4 mt-4 inline-block transition duration-300"
-          >
-            Learn More &rarr;
-          </motion.button>
+          <button
+  className="bg-white text-black hover:bg-transparent hover:text-white border-2 hover:border-white py-2 px-4 mt-4 inline-block transition duration-300"
+>
+  Learn More &rarr;
+</button>
+
+
         </div>
       </motion.div>
     </div>

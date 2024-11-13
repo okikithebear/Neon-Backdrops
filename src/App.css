@@ -3,3 +3,12 @@ html,
 body {
   overflow-x: hidden;
 }
+/* Custom Lightbox Overlay */
+.custom-lightbox-overlay .yarl__slide-background {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as desired */
+}
+
+/* Ensure lightbox has transparent overlay */
+.yarl__container {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}

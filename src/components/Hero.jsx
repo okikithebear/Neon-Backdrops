@@ -30,22 +30,29 @@ function Hero() {
     >
       <div className="hero-overlay absolute inset-0 bg-black opacity-40"></div>
       <div className="absolute z-10 flex flex-col items-center justify-center h-full w-full text-center px-4">
-        <h1 className="font-headline text-2xl md:text-6xl font-bold text-white animate-text-pop-in">
-          ARTISTRY MEETS CRAFTSMANSHIP
-        </h1>
-        <p className="font-body text-xl md:text-2xl text-gray-300 mt-4 animate-fade-in-down">
+      <h1 className="font-headline text-2xl md:text-6xl font-mulish text-white animate-text-pop-in">
+  <span className="block text-4xl md:text-7xl">ARTISTRY</span>
+  MEETS CRAFTSMANSHIP
+</h1>
+
+        <p className="font-mulish text-lg md:text-2xl text-gray-300 mt-4 animate-fade-in-down">
           Elevate Your Space with Handcrafted Elegance
         </p>
         <motion.a
-          href="/shop"
-          className="bg-[rgba(255,255,255,0.6)] hover:bg-[rgba(255,255,255,0.5)] px-8 py-4 text-lg lg:text-xl rounded-md backdrop-blur-md transition mt-10 lg:px-20 lg:py-6"
-          variants={buttonVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-        >
-          SHOP NOW →
-        </motion.a>
+  href="/shop"
+  className="bg-[rgba(255,255,255,0.6)] hover:bg-[rgba(255,255,255,0.5)] px-4 py-2 text-lg rounded-md backdrop-blur-md mt-10 lg:px-8 lg:py-4"
+  variants={buttonVariants}
+  initial="hidden"
+  animate="visible"
+  whileHover={{
+    scaleX: 1.2,  // Extends horizontally by 20%
+    transformOrigin: "center",  // Ensures the button expands from the center
+    transition: { type: "spring", stiffness: 300, damping: 20 }
+  }}
+>
+  SHOP NOW →
+</motion.a>
+
         <div className="absolute bottom-5 animate-bounce">
           <i className="fas fa-arrow-down text-white text-2xl"></i>
         </div>

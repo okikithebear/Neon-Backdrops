@@ -7,8 +7,8 @@ module.exports = {
     extend: {
       // Custom fonts for different sections
       fontFamily: {
-        headline: ['"Playfair Display"', 'serif'],
-        body: ['"Merriweather"', 'serif'],
+        mulish:['Mulish','sans-serif'],
+        body: ['Merriweather', 'serif'],
         accent: ['"Great Vibes"', 'cursive'],
       },
       fontWeight: {
