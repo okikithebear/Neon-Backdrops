@@ -8,16 +8,16 @@ const SizeChart = ({ sizes }) => (
       <thead>
         <tr>
           <th className="border p-2">Size</th>
-          <th className="border p-2">Chest</th>
-          <th className="border p-2">Waist</th>
+          <th className="border p-2">width</th>
+          <th className="border p-2">height</th>
         </tr>
       </thead>
       <tbody>
         {sizes.map((size, index) => (
           <tr key={index}>
             <td className="border p-2">{size.label}</td>
-            <td className="border p-2">{size.chest}</td>
-            <td className="border p-2">{size.waist}</td>
+            <td className="border p-2">{size.width}</td>
+            <td className="border p-2">{size.height}</td>
           </tr>
         ))}
       </tbody>

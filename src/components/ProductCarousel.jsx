@@ -83,7 +83,7 @@ const ProductCarousel = () => {
                 onClick={() => handleProductClick(product.id)} // Add click handler
               >
                 {/* Image */}
-                <div className="relative w-full h-[400px] sm:h-[350px] lg:h-[400px]">
+                <div className="relative w-full h-[500px] sm:h-[350px] lg:h-[400px] ">
                   <img
                     src={product.image}
                     alt={product.title}
@@ -92,15 +92,16 @@ const ProductCarousel = () => {
                 </div>
 
                 {/* Product Info inside the same card */}
-                <div className="p-4 text-start bg-gray-50 rounded-b-lg shadow-md">
+                <div className="p-4 text-start bg-gray-200 rounded-b-lg shadow-md">
                   {/* Product Title */}
                   <p className="text-lg font-semibold text-gray-800">{product.title}</p>
+                  <p className="text-base text-purple-600 mt-1">{product.type}</p>
 
                   {/* Product Name */}
-                  <p className="text-base text-gray-600 mt-1">{product.name}</p>
+                  <p className="text-base text-black mt-1">{product.name}</p>
 
                   {/* Product Type */}
-                  <p className="text-base text-gray-600 mt-1">{product.type}</p>
+                  
 
                   {/* Price Tag */}
                   <p className="text-xl font-bold text-gray-900 mt-2">

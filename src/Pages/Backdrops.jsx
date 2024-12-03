@@ -77,7 +77,7 @@ const Backdrop = () => {
               <img
                 src={product.image}
                 alt={product.name}
-               className="w-full h-[300px] sm:h-[350px] lg:h-[300px] object-cover mb-4"
+               className="w-full h-[500px] sm:h-[450px] lg:h-[400px] object-cover mb-4"
               />
               <h2 className="text-black mb-3">{product.name}</h2>
               <p className="text-gray-600 mb-2">{product.type}</p>

@@ -9,7 +9,7 @@ const Footer = () => {
           <ul className="space-y-3 text-gray-700">
             <li><a href="/backdrops" className="hover:text-yellow-500 transition">Backdrops</a></li>
             <li><a href="/rentals" className="hover:text-yellow-500 transition">Rentals</a></li>
-            <li><a href="/digital-backdrops" className="hover:text-yellow-500 transition">Digital Backdrops</a></li>
+            <li><a href="/backdrops" className="hover:text-yellow-500 transition">Digital Backdrops</a></li>
           </ul>
         </div>
 
@@ -19,7 +19,7 @@ const Footer = () => {
           <ul className="space-y-3 text-gray-700">
             <li><a href="/about" className="hover:text-yellow-500 transition">Our Story</a></li>
             <li><a href="/contact" className="hover:text-yellow-500 transition">Contact</a></li>
-            <li><a href="/faqs" className="hover:text-yellow-500 transition">FAQs</a></li>
+            <li><a href="/Faq" className="hover:text-yellow-500 transition">FAQs</a></li>
           </ul>
         </div>
 
@@ -27,9 +27,9 @@ const Footer = () => {
         <div>
           <h3 className="text-yellow-600 text-xl font-mulish mb-4">Customer Service</h3>
           <ul className="space-y-3 text-gray-700">
-            <li><a href="/shipping" className="hover:text-yellow-500 transition">Shipping & Returns</a></li>
-            <li><a href="/privacy" className="hover:text-yellow-500 transition">Privacy Policy</a></li>
-            <li><a href="/terms" className="hover:text-yellow-500 transition">Terms & Conditions</a></li>
+            <li><a href="/Faq" className="hover:text-yellow-500 transition">Shipping & Returns</a></li>
+            <li><a href="/Faq" className="hover:text-yellow-500 transition">Privacy Policy</a></li>
+            <li><a href="/Faq" className="hover:text-yellow-500 transition">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -63,8 +63,8 @@ const Footer = () => {
         
         {/* Footer Links and Social Icons */}
         <div className="flex justify-center font-mulish items-center space-x-4 mt-2">
-          <a href="/privacy" className="hover:text-yellow-600 transition">Privacy Policy</a>
-          <a href="/terms" className="hover:text-yellow-600 transition">Terms of Service</a>
+          <a href="/Faq" className="hover:text-yellow-600 transition">Privacy Policy</a>
+          <a href="/Faq" className="hover:text-yellow-600 transition">Terms of Service</a>
         </div>
       </div>
     </footer>

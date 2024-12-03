@@ -8,16 +8,16 @@ import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Share from 'yet-another-react-lightbox/plugins/share';
 
 // Importing images directly
-import Image1 from '../Assets/Product image/photo-1537204319452-fdbd29e2ccc7.avif';
-import Image2 from '../Assets/Product image/photo-1537204319452-fdbd29e2ccc7.avif';
-import Image3 from '../Assets/Product image/photo-1565791380713-1756b9a05343.avif';
-import Image4 from '../Assets/Product image/photo-1549396563-73701bbb8f20.avif';
+import Image1 from '../Assets/Gallery/Themicheals.JPG';
+import Image2 from '../Assets/Gallery/Okoro.JPG';
+import Image3 from '../Assets/Gallery/Kamani.JPG';
+import Image4 from '../Assets/Gallery/Langs_le_.JPG';
 
 const images = [
-  { src: Image1, photographer: 'Photographer A' },
-  { src: Image2, photographer: 'Photographer B' },
-  { src: Image3, photographer: 'Photographer C' },
-  { src: Image4, photographer: 'Photographer D' },
+  { src: Image1, photographer: '@themichealsgallery' },
+  { src: Image2, photographer: '@georgeokoro' },
+  { src: Image3, photographer: '@kamaniphotography' },
+  { src: Image4, photographer: '@lang_le_photographe' },
 ];
 
 const WorkGallery = () => {
@@ -59,7 +59,7 @@ const WorkGallery = () => {
           <img
             src={images[0].src}
             alt="Mobile Slide"
-            className="w-full h-[400px] object-cover cursor-pointer"
+            className="w-full h-[500px] object-cover cursor-pointer rounded-lg shadow-lg"
             onClick={() => {
               setPhotoIndex(0);
               setIsOpen(true);
@@ -98,7 +98,7 @@ const WorkGallery = () => {
                 <img
                   src={image.src}
                   alt={`Slide ${visibleStartIndex + index}`}
-                  className="w-full h-[300px] md:h-[400px] object-cover cursor-pointer rounded-lg shadow-lg"
+                  className="w-full h-[400px] md:h-[400px] object-cover cursor-pointer rounded-lg shadow-lg"
                 />
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 text-black p-4 text-center backdrop-blur-md bg-opacity-50"
@@ -106,7 +106,7 @@ const WorkGallery = () => {
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: index * 0.3 }}
                 >
-                  <p className="text-sm md:text-base">{image.photographer}</p>
+                  <p className="text-sm md:text-base text-yellow-500 font-accent">{image.photographer}</p>
                 </motion.div>
               </motion.div>
             ))}

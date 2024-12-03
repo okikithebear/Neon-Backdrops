@@ -1,7 +1,7 @@
-// App.js
+import React from 'react';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from "./Context/CartContext.js";
 
 // Importing new components for the pages
@@ -31,6 +31,17 @@ import CartPage from './Pages/Cart';
 import CheckoutPage from './Pages/Checkout';
 // import Founder from './Pages/About.jsx';
 import FAQ from './Pages/Faq.jsx';
+import OrderConfirmationPage from './components/OrderConfirmationPage.jsx';
+
+// Custom component to handle scrolling to top on route change
+function ScrollToTop() {
+  const location = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   return (
@@ -38,6 +49,7 @@ function App() {
       <Router>
         <div className="App">
           <Header />
+          <ScrollToTop /> {/* Scroll to top when route changes */}
           <Routes>
             <Route path="/" element={
               <>
@@ -64,6 +76,8 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/Faq" element={<FAQ />} />
+            <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+
           </Routes>
           <Footer />
         </div>

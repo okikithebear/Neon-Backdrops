@@ -122,12 +122,13 @@ const Shop = () => {
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-[300px] sm:h-[350px] lg:h-[300px] object-cover mb-4"
+                    className="w-full h-[500px] sm:h-[350px] lg:h-[300px] object-cover mb-4"
                   />
+                  <h1 className="text-purple-600 mb-2">{product.type}</h1>
                   <h2 className="font-bold text-gray-800 mb-3">
                     {product.name}
                   </h2>
-                  <p className="text-gray-600 mb-2">{product.type}</p>
+                  
                   <p className="text-gray-600 font-bold">₦{formatCurrency(product.price)}</p> {/* Use formatCurrency */}
                   <button
                     className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${

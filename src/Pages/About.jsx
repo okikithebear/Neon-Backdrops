@@ -1,66 +1,62 @@
-import React from 'react';
-import PhotographerImage from '../Assets/Images/About.jpg';
-import { FaInstagram } from 'react-icons/fa';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import WomanImg from '../Assets/Gallery/August.JPG';
+
+import { motion } from 'framer-motion';
+import { transition1 } from '../transition';
+
 const About = () => {
+  const location = useLocation();
+
+  // Scroll to the top whenever the location changes (i.e., page reload or route change)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
-    <div>
-      {/* Hero Section */}
-      <div className="relative h-screen overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${PhotographerImage})` }}
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
-          <h1 className="text-white text-4xl md:text-6xl font-bold tracking-wide leading-tight max-w-4xl mx-auto mt-10">
-            Designed & Hand Painted with Care in Lagos, Nigeria
-          </h1>
-        </div>
-      </div>
-
-      {/* Founder Content Section */}
-      <section className="container-fluid flex flex-col p-2 md:p-6 lg:flex-row lg:mb-0 font-mulish mt-10">
-        <div className="basis-1/3 lg:basis-1/2 lg:mb-10 md:px-1">
-          {/* Image without hover effect */}
-          <div className="relative">
+    <motion.section
+      initial={{ opacity: 0, y: '100%' }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: '100%' }}
+      transition={transition1}
+      className='py-8 md:py-24 bg-white mt-8 mb-10'
+    >
+      <div className='container mx-auto px-6 md:px-12'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
+          {/* Image Section */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={transition1}
+            className='order-2 md:order-1'
+          >
             <img
-              src="https://images.pexels.com/photos/8618069/pexels-photo-8618069.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Founder"
-              className="relative lg:top-14 items-center xl:top-0 overflow-x-visible rounded-2xl shadow-lg"
+              src={WomanImg}
+              alt='Woman'
+              className='w-[400px] h-[500px] rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105'
             />
-          </div>
-        </div>
-
-        <div className="basis-1/2 md:my-auto lg:w-1/3 lg:px-2 md:py-2 md:px-1 lg:mx-4 flex-wrap">
-          <h1 className="text-2xl md:text-3xl font-semibold lg:text-4xl text-darkBlue lg:my-4 my-4">
-            Capturing Moments, Creating Stories
-          </h1>
-
-          <span>
-            <i className="fa fa-quote-left text-2xl text-darkgreenVariant"></i>
-          </span>
-          <p className="px-3 text-lg italic text-slate-500 w-full md:w-5/6 -mt-2 mx-4">
-            <span>
-              "Photography is the story I fail to put into words."
+          </motion.div>
+          
+          {/* Content Section */}
+          <motion.div
+            initial={{ opacity: 0, x: '-50%' }}
+            animate={{ opacity: 1, x: '0%' }}
+            transition={transition1}
+            className='order-1 md:order-2 text-left'
+          >
+            <h2 className='text-2xl md:text-4xl font-bold mt-20 md:mt-0 mb-4 text-primary px-4 md:px-0'>
+              About Me
+            </h2>
+            <p className='text-gray-600 mb-8 px-4 md:px-0 leading-relaxed'>
+              Hi, I’m <b>Toyese</b>, a passionate photographer specializing in creating stunning backdrops that transform every shot. With years of experience in the art of photography and design, I craft custom backdrops that elevate your photos, whether it’s for a photoshoot, event, or personal project.
               <br />
-              - Destin Sparks
-            </span>
-          </p>
+              <br />
+              My mission is to bring your vision to life, creating a backdrop that perfectly complements the mood and essence of your moments. Each project is a unique opportunity to collaborate and turn your ideas into visual masterpieces. I can't wait to work together and capture the beauty in every frame.
+            </p>
+          </motion.div>
         </div>
-      </section>
-
-      {/* Call-to-Action (CTA) Button with Instagram Icon */}
-      <div className="flex justify-center mb-10">
-      <a
-          href="https://www.instagram.com/your_instagram_handle"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-3 bg-darkgreenVariant text-black text-lg font-semibold rounded-full transition duration-300 hover:bg-darkgreenVariant-dark hover:scale-105 flex items-center space-x-2"
-        >
-          <FaInstagram className="text-2xl" />  {/* Instagram Icon */}
-          <span>Check out more on Instagram</span>
-        </a>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

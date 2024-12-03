@@ -6,10 +6,10 @@ import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Share from 'yet-another-react-lightbox/plugins/share';
 
-import image1 from '../Assets/Collection-image/collection-image.jpeg';
-import image2 from '../Assets/Collection-image/collection-image1.jpeg';
-import image3 from '../Assets/Collection-image/collection-image.jpeg';
-import image4 from '../Assets/Collection-image/collection-image.jpeg';
+import image1 from '../Assets/Gallery/August4.JPG';
+import image2 from '../Assets/Gallery/Truth.JPG';
+import image3 from '../Assets/Gallery/August5.JPG';
+import image4 from '../Assets/Gallery/August.JPG';
 
 const images = [image1, image2, image3, image4];
 
@@ -46,7 +46,7 @@ const Gallery = () => {
           <img
             src={images[0]}
             alt="Mobile Slide"
-            className="w-full h-[400px] md:h-[400px] object-cover cursor-pointer"
+            className="w-full h-[500px] md:h-[400px] object-cover cursor-pointer rounded-lg shadow-lg"
             onClick={() => {
               setPhotoIndex(0);
               setIsOpen(true);

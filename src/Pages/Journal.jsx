@@ -2,26 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Importing images
-import NatureBackdrop from '../Assets/Images/Journal 1.avif';
-import UrbanBackdrop from '../Assets/Images/journal2.avif';
-import VintageBackdrop from '../Assets/Images/Journal 3.avif';
+import Elegance from '../Assets/Gallery/Jornal1.JPG';
+import Tradition from '../Assets/Gallery/Journal2.JPG';
+import Vintage from '../Assets/Gallery/Journal3.JPG';
 
 // Array of articles with images and descriptions
 const articles = [
   {
-    title: "Nature Bliss",
+    title: "Pure Elegance",
     content: "Perfect for outdoor photoshoots with a natural vibe.",
-    image: NatureBackdrop,
+    image: Elegance,
   },
   {
-    title: "Urban Vibes",
+    title: "Tradition is everything",
     content: "Add an edgy, city feel to your photoshoots.",
-    image: UrbanBackdrop,
+    image: Tradition
   },
   {
     title: "Vintage Charm",
     content: "Timeless elegance for classic portrait photography.",
-    image: VintageBackdrop,
+    image: Vintage,
   },
 ];
 
@@ -48,7 +48,7 @@ const Journal = () => {
     >
       {/* Header */}
       <div className="mb-12 text-center">
-        <h1 className="text-6xl font-serif font-bold font-mulish text-gray-800 tracking-wide">Journal</h1>
+        <h1 className="text-6xl  font-bold font-accent text-gray-800 tracking-wide">Journal</h1>
         <p className="text-gray-600 font-mulish mt-4 text-lg md:text-xl max-w-2xl mx-auto">
           Dive into our world of unique backdrops and explore tips to elevate your photography game.
         </p>
@@ -68,7 +68,7 @@ const Journal = () => {
             <img
               src={article.image}
               alt={article.title}
-              className="w-full h-64 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-[500px] md:h-[400px] lg:h-[500px] object-cover cursor-pointer  shadow-lg object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
             />
             <div className="absolute inset-0 bg-gray-800 bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
               <h2 className="text-white text-xl font-semibold">{article.title}</h2>

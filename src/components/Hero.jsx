@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import '../Style/Hero.css';
 import { motion } from 'framer-motion';
-import backgroundImage1 from '../Assets/Images/background.jpg';
-import backgroundImage2 from '../Assets/Images/Hero2.avif';
+import backgroundImage1 from '../Assets/Gallery/Main1.JPG';
+import backgroundImage2 from '../Assets/Gallery/Main4.jpg';
 
 const backgroundImages = [backgroundImage1, backgroundImage2];
 
 function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      backgroundImages.forEach((image) => {
+        const img = new Image();
+        img.src = image;
+      });
+    };
+    preloadImages();
+  }, []);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -24,9 +35,12 @@ function Hero() {
   };
 
   return (
-    <section
+     <section
       className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${backgroundImages[currentImage]})` }}
+      style={{
+        backgroundImage: `url(${backgroundImages[currentImage]})`,
+        filter: "contrast(1.2) brightness(1.1)", // Enhance sharpness and brightness
+      }}
     >
       <div className="hero-overlay absolute inset-0 bg-black opacity-40"></div>
       <div className="absolute z-10 flex flex-col items-center justify-center h-full w-full text-center px-4">

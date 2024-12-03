@@ -59,8 +59,8 @@ const FAQ = () => {
         <>
           <p><strong>Rental Returns</strong>: Please return rented backdrops on the due date to avoid additional charges. Damaging a rental backdrop incurs a NGN50,000 fee.</p>
           <p className="mt-2"><strong>Purchase Returns</strong>: Purchased items can be returned within 30 days of receipt under specific conditions. Cancellations are allowed before a shipping label is created. Refunds will be issued to the original payment method, excluding any offer code value.</p>
-          <p className="mt-2"><strong>Return Procedure</strong>: Contact us at in**@Ne**********.com within 30 days of delivery to arrange for return shipping or pick-up. Returns must be completed within 1 week of receiving instructions.</p>
-          <p className="mt-2"><strong>Return Conditions</strong>: Products should be in a usable condition, without stains, tears, odors, or other damage. Zen Backdrops may request images to assess product condition and reserves the right to refuse any returns.</p>
+          <p className="mt-2"><strong>Return Procedure</strong>: Contact us at neonbackdrops@gmail.com within 30 days of delivery to arrange for return shipping or pick-up. Returns must be completed within 1 week of receiving instructions.</p>
+          <p className="mt-2"><strong>Return Conditions</strong>: Products should be in a usable condition, without stains, tears, odors, or other damage. Neon Backdrops may request images to assess product condition and reserves the right to refuse any returns.</p>
         </>
       )
     },
@@ -84,7 +84,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4 my-20">
+    <div className="max-w-4xl mx-auto py-12 px-4 mt-20 mb-40">
       <div className="border-b border-gray-300 pb-2 mb-6 text-center">
         <h1 className="text-4xl font-bold text-gray-800 sm:text-3xl">FREQUENTLY ASKED QUESTIONS</h1>
       </div>

@@ -17,77 +17,90 @@ const Header = () => {
   const [user, setUser] = useState(null); // Define user state here
   const [isSearchOpen, setIsSearchOpen] = useState(false); // New state for search bar visibility
   const [searchQuery, setSearchQuery] = useState(''); 
-  const dropdownRef = useRef(null);
+  const shopDropdownRef = useRef(null);
+  const userDropdownRef = useRef(null);
+  
   const navigate = useNavigate(); // Initialize useNavigate
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  // const toggleShopDropdown = () => setIsShopDropdownOpen(!isShopDropdownOpen);
-  const toggleUserDropdown = () => setIsUserDropdownOpen(!isUserDropdownOpen);
-  const toggleSearch = () => setIsSearchOpen(!isSearchOpen); 
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      setUser(null);
-      setIsUserDropdownOpen(false);
-      toast.success("Successfully logged out!"); // Show success message
-      navigate('/my-account'); // Use navigate for redirection
-    } catch (error) {
-      console.error("Error signing out:", error);
-      toast.error("Failed to log out. Please try again."); // Show error message
-    }
-  };
-
-  // Function to handle search submission
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-
-    if (searchQuery) {
-      // Define a mapping of search terms to paths
-      const searchRoutes = {
-        'backdrops': '/backdrops',
-        'rentals': '/rentals',
-        'purchase': '/purchase',
-        'digital': '/digital-backdrops',
-        'contact': '/contact',
-        'about': '/about',
-        'journal': '/journal',
-        'shop': '/shop',
-        'account': '/my-account'
-      };
-
-      // Find the path corresponding to the query
-      const targetPath = searchRoutes[searchQuery.toLowerCase()];
-      if (targetPath) {
-        navigate(targetPath);  // Navigate to the page
-      } else {
-        alert('Page not found'); // Handle if page doesn't exist
-      }
-
-      setSearchQuery('');  // Clear the search field
-      setIsSearchOpen(false);  // Close the search bar
-    }
-  };
-
-  useEffect(() => {
-    // Listen to authentication state changes
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe(); // Unsubscribe on unmount
-  }, []);
-
-  useEffect(() => {
+   // Toggle states
+   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+   const toggleUserDropdown = () => setIsUserDropdownOpen(!isUserDropdownOpen);
+   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
+ 
+   const handleLogout = async () => {
+     try {
+       await signOut(auth);
+       setUser(null);
+       toast.success('Successfully logged out!');
+       navigate('/my-account');
+     } catch (error) {
+       toast.error('Failed to log out. Please try again.');
+     }
+   };
+ 
+   const handleSearchSubmit = (e) => {
+     e.preventDefault();
+     if (searchQuery) {
+       const searchRoutes = {
+         backdrops: '/backdrops',
+         rentals: '/rentals',
+         purchase: '/purchase',
+         digital: '/digital-backdrops',
+         contact: '/contact',
+         about: '/about',
+         journal: '/journal',
+         shop: '/shop',
+         account: '/my-account',
+       };
+       const targetPath = searchRoutes[searchQuery.toLowerCase()] || null;
+       if (targetPath) navigate(targetPath);
+       else toast.error('Page not found.');
+       setSearchQuery('');
+       setIsSearchOpen(false);
+     }
+   };
+ 
+   useEffect(() => {
+     const unsubscribe = onAuthStateChanged(auth, setUser);
+     return () => unsubscribe();
+   }, []);
+ 
+   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        shopDropdownRef.current &&
+        !shopDropdownRef.current.contains(event.target)
+      ) {
         setIsShopDropdownOpen(false);
+      }
+      if (
+        userDropdownRef.current &&
+        !userDropdownRef.current.contains(event.target)
+      ) {
         setIsUserDropdownOpen(false);
       }
     };
+  
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
+  
+  
+   const shopLinks = [
+     { name: 'My Account', path: '/my-account' },
+     { name: 'Backdrops', path: '/backdrops' },
+     { name: 'Rentals', path: '/rentals' },
+     { name: 'Terms', path: '/Faq' },
+   ];
+ 
+   const mainLinks = [
+     { name: 'Home', path: '/' },
+     { name: 'Journal', path: '/journal' },
+     { name: 'About', path: '/about' },
+     { name: 'Contact', path: '/contact' },
+   ];
+ 
+  // const mobileLinks = [...mainLinks, ...shopLinks];
   return (
     <header className="w-full bg-white shadow-md fixed top-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-4">
@@ -97,46 +110,47 @@ const Header = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-8 relative">
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onMouseEnter={() => setIsShopDropdownOpen(true)}
-              onClick={() => window.location.href = '/shop'}
-              className="text-gray-700 hover:text-purple-600 transition duration-300 transform hover:scale-105"
-            >
-              Shop <FaChevronDown className="inline ml-1" />
-            </button>
-            {/* Dropdown Menu with Motion */}
-            {isShopDropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10"
-              >
-               {['My Account', 'Backdrops', 'Rentals', 'Purchase'].map((link) => (
-                  <Link
-                    key={link}
-                    to={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="block px-4 py-2 text-gray-700 hover:bg-purple-100 transition"
-                    onClick={() => setIsShopDropdownOpen(false)} // Close dropdown after selection
-                  >
-                    {link}
-                  </Link>
-                ))}
-              </motion.div>
-            )}
-          </div>
+ {/* Desktop Menu */}
+ <nav className="hidden md:flex items-center space-x-8">
+ <div className="relative" ref={shopDropdownRef}>
+  <button
+    onMouseEnter={() => setIsShopDropdownOpen(true)}
+    onClick={(e) => {
+      e.stopPropagation(); // Prevent click propagation
+      navigate('/shop');
+    }}
+    className="text-gray-700 hover:text-purple-600 transition"
+  >
+    Shop <FaChevronDown className="inline ml-1" />
+  </button>
+  {isShopDropdownOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10"
+      onClick={(event) => event.stopPropagation()} // Prevent clicks inside dropdown from bubbling
+    >
+      {shopLinks.map(({ name, path }) => (
+        <Link
+          key={name}
+          to={path}
+          className="block px-4 py-2 hover:bg-purple-100"
+          onClick={() => setIsShopDropdownOpen(false)} // Close dropdown on link click
+        >
+          {name}
+        </Link>
+      ))}
+    </motion.div>
+  )}
+</div>
 
-          {['Home', 'Journal', 'About', 'Contact'].map((item) => (
-            <motion.a
-              key={item}
-              href={`/${item === 'Home' ? '' : item.toLowerCase().replace(/\s+/g, '-')}`}
-              className="text-gray-700 hover:text-purple-600 transition duration-300 transform hover:scale-105"
-              whileHover={{ scale: 1.1 }}
-            >
-              {item}
-            </motion.a>
+
+
+          {mainLinks.map(({ name, path }) => (
+            <Link key={name} to={path} className="text-gray-700 hover:text-purple-600">
+              {name}
+            </Link>
           ))}
         </nav>
 
@@ -168,7 +182,7 @@ const Header = () => {
             {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
           </div>
           
-          <div className="relative" ref={dropdownRef}>
+          <div className="relative" ref={userDropdownRef}>
             <FaUser onClick={toggleUserDropdown} className="text-gray-700 hover:text-purple-600 cursor-pointer transition" />
             {isUserDropdownOpen && (
               <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
@@ -197,12 +211,32 @@ const Header = () => {
         animate={isMobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex flex-col items-center py-4">
-          <a href="/" className="text-gray-700 py-2">Home</a>
-          <a href="/about" className="text-gray-700 py-2">About</a>
-          <a href="/contact" className="text-gray-700 py-2">Contact</a>
-          <a href="/shop" className="text-gray-700 py-2">Shop</a>
-        </div>
+       <div className="flex flex-col items-center font-mulish py-4 space-y-2">
+  {[
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Shop', href: '/shop' },
+    { name: 'Journals', href: '/journal' },
+    { name: 'Backdrops', href: '/backdrops' },
+    { name: 'Rentals', href: '/rentals' },
+    { name: 'My Account', href: '/my-account' },
+  ].map((link) => (
+    <a
+      key={link.href}
+      href={link.href}
+      className="text-gray-700 py-2 transition-all duration-300 hover:text-purple-500 hover:scale-105"
+      aria-current={window.location.pathname === link.href ? 'page' : undefined}
+      style={{
+        fontWeight: window.location.pathname === link.href ? 'bold' : 'normal',
+        color: window.location.pathname === link.href ? '#6f55f2' : undefined,
+      }}
+    >
+      {link.name}
+    </a>
+  ))}
+</div>
+
       </motion.div>
     </header>
   );

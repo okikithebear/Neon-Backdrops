@@ -1,19 +1,33 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+const functions = require("firebase-functions");
+const sgMail = require("@sendgrid/mail");
 
-// const {onRequest} = require("firebase-functions/v2/https");
-// const logger = require("firebase-functions/logger");
+// Set SendGrid API key from Firebase environment config
+sgMail.setApiKey(functions.config().sendgrid.key);
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+exports.sendEmail = functions.https.onCall(async (data, context) => {
+  const {customerEmail, ownerEmail, subject,
+    customerMessage, ownerMessage} = data;
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+  try {
+    // Send customer email
+    await sgMail.send({
+      to: customerEmail,
+      from: "your-email@example.com", // Verified sender
+      subject: subject,
+      text: customerMessage,
+    });
+
+    // Send owner email
+    await sgMail.send({
+      to: ownerEmail,
+      from: "your-email@example.com", // Verified sender
+      subject: `New Order Received: ${subject}`,
+      text: ownerMessage,
+    });
+
+    return {success: true, message: "Emails sent successfully!"};
+  } catch (error) {
+    console.error("Error sending emails:", error);
+    return {success: false, error: error.message};
+  }
+});

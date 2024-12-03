@@ -3,6 +3,7 @@ import { FiMapPin, FiPhone, FiMail, FiClock } from "react-icons/fi";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 // Validation schema using Yup
 const validationSchema = Yup.object({
@@ -15,11 +16,11 @@ const validationSchema = Yup.object({
 
 // Contact Information Section
 const ContactInfo = () => (
-  <div className="bg-purple-700 text-white p-6 sm:p-8 w-full md:w-1/3 rounded-tl-lg rounded-bl-lg ">
+  <div className="bg-yellow-500 text-white p-6 sm:p-8 w-full md:w-1/3 rounded-tl-lg rounded-bl-lg ">
     <h2 className="text-2xl fon-body font-semibold mb-6">Contact Information</h2>
-    <ContactItem icon={<FiMapPin />} title="Location Address" content="Mokola, 16/A, Ibadan, Nigeria" />
+    <ContactItem icon={<FiMapPin />} title="Location Address" content="Shop 6 right wing between UBA and GTB, Ibadan, Nigeria" />
     <ContactItem icon={<FiPhone />} title="Phone Number" content="+234 (090) 567 87 9" />
-    <ContactItem icon={<FiMail />} title="Email Address" content="example@example.com" />
+    <ContactItem icon={<FiMail />} title="Email Address" content="neonbackdrops@gmail.com" />
     <ContactItem icon={<FiClock />} title="Opening Hours" content={["Mon-Fri: 9 AM - 5 PM", "Sat: 10 AM - 3 PM", "Sun: Closed"]} />
   </div>
 );
@@ -46,24 +47,27 @@ const ContactForm = () => {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     setSubmitting(true);
     try {
-      const response = await fetch("http://localhost:8888/.netlify/functions/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await emailjs.send(
+        "service_52egjue", // Your EmailJS service ID
+        "template_oivlhzj", // Your EmailJS template ID
+        {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          subject: values.subject,
+          message: values.message,
         },
-        body: JSON.stringify(values),
-      });
+        "vnJQEV1QYsHXi4zcd" // Your EmailJS user ID
+      );
 
-      const result = await response.json();
-      
-      if (response.ok) {
-        alert('Email sent successfully!');
+      if (response.status === 200) {
+        alert("Email sent successfully!");
         resetForm();
       } else {
-        alert(`Error: ${result.message}`);
+        alert(`Error: ${response.text}`);
       }
     } catch (error) {
-      alert('Error sending email. Please try again later.');
+      alert("Error sending email. Please try again later.");
     } finally {
       setSubmitting(false);
     }
@@ -71,7 +75,7 @@ const ContactForm = () => {
 
   return (
     <div className="p-6 sm:p-8 w-full md:w-2/3 bg-purple-50 rounded-tr-lg rounded-br-lg">
-      <h2 className="text-2xl font-mulish  mb-6 text-purple-900">Get in Touch</h2>
+      <h2 className="text-2xl font-mulish  mb-6 text-black">Get in Touch</h2>
       <Formik
         initialValues={{ firstName: "", lastName: "", email: "", subject: "", message: "" }}
         validationSchema={validationSchema}
@@ -99,7 +103,7 @@ const ContactForm = () => {
             </div>
             <motion.button
               type="submit"
-              className="w-full p-3 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition"
+              className="w-full p-3 bg-black text-white rounded-lg hover:bg-purple-800 transition"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Sending..." : "Send Message"}

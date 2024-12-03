@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { motion, useInView } from 'framer-motion';
-import AboutImage1 from '../Assets/Images/About.jpg';
-import AboutImage2 from '../Assets/Images/About2.avif';
+import AboutImage1 from '../Assets/Gallery/Main2.jpg';
+import AboutImage2 from '../Assets/Gallery/Main3.JPG';
 
 const images = [AboutImage1, AboutImage2]; // Array of images
 
@@ -19,10 +21,15 @@ const AboutSection = () => {
     return () => clearInterval(interval); // Clean up the interval
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate('/about'); // Navigate to the About page
+  };
   return (
     <div ref={ref} className="flex flex-col md:flex-row h-auto md:h-screen">
       {/* Left Image Section */}
-      <div className="w-full md:w-1/2 relative h-64 md:h-full">
+      <div className="w-full md:w-1/2 relative h-[500px] md:h-full">
         <motion.img 
           key={currentImage} // Unique key for each image
           src={images[currentImage]} 
@@ -60,10 +67,11 @@ const AboutSection = () => {
             Our founder began painting his own backdrops to craft unique, signature photographs. Today, Neon Backdrops continues that passion, bringing one-of-a-kind creations to photographers and creators worldwide.
           </motion.p>
           <button
-  className="bg-white text-black hover:bg-transparent hover:text-white border-2 hover:border-white py-2 px-4 mt-4 inline-block transition duration-300"
->
-  Learn More &rarr;
-</button>
+      onClick={handleNavigation}
+      className="bg-white text-black hover:bg-transparent hover:text-white border-2 hover:border-white py-2 px-4 mt-4 inline-block transition duration-300"
+    >
+      Learn More &rarr;
+    </button>
 
 
         </div>

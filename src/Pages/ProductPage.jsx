@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
 import { products } from "../Assets/Product image/data";
 import { FaStar, FaRegStar } from "react-icons/fa"; // Font Awesome stars for ratings
@@ -19,6 +19,11 @@ const ProductPage = () => {
   const { addToCart } = useContext(CartContext); // Access the addToCart function from context
   const [showSizeChart, setShowSizeChart] = useState(false);
 
+    // Scroll to the top when the component mounts
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+  
   if (!product) {
     return <div>Product not found</div>;
   }
@@ -30,10 +35,10 @@ const ProductPage = () => {
 
   const sizeChartData = {
     sizes: [
-      { label: "Small", chest: "34-36", waist: "28-30" },
-      { label: "Medium", chest: "38-40", waist: "32-34" },
-      { label: "Large", chest: "42-44", waist: "36-38" },
-      { label: "X-Large", chest: "46-48", waist: "40-42" },
+      { label: "Small", width: "7x12", height: "7ft" },
+      { label: "Medium", width: "8x8", height: "8ft" },
+      { label: "Large", width: "10x10", height: "10ft" },
+      { label: "X-Large", width: "12x12", height: "12ft" },
     ]
   };
   
@@ -43,27 +48,26 @@ const ProductPage = () => {
     setQuantity(newQuantity);
   };
 
-  // Function to handle start date change
   const handleStartDateChange = (e) => {
-    const selectedStartDate = e.target.value;
-    setStartDate(selectedStartDate);
-
-    // Reset warning if both start and end dates are set
-    if (selectedStartDate && endDate) {
-      setShowWarning(false);
+    const date = e.target.value;
+    if (endDate && new Date(date) >= new Date(endDate)) {
+        alert("Start Date must be before End Date.");
+    } else {
+        setStartDate(date);
+        setShowWarning(false);
     }
-  };
+};
 
-  // Function to handle end date change
-  const handleEndDateChange = (e) => {
-    const selectedEndDate = e.target.value;
-    setEndDate(selectedEndDate);
-
-    // Reset warning if both start and end dates are set
-    if (startDate && selectedEndDate) {
-      setShowWarning(false);
+const handleEndDateChange = (e) => {
+    const date = e.target.value;
+    if (startDate && new Date(date) <= new Date(startDate)) {
+        alert("End Date must be after Start Date.");
+    } else {
+        setEndDate(date);
+        setShowWarning(false);
     }
-  };
+};
+
 
   // Calculate the rental duration in days
   const calculateRentalDuration = () => {
@@ -116,22 +120,31 @@ const ProductPage = () => {
 
   // Handle Add to Cart with product details, including rental dates if applicable
   const handleAddToCart = () => {
-    if (product.type === "Rental" && (!startDate || !endDate)) {
-      setShowWarning(true); // Show warning if dates are not selected
-      return;
+    if (product.type === "rental" && (!startDate || !endDate)) {
+        setShowWarning(true); // Show warning if dates are not selected
+        return;
     } else {
-      setShowWarning(false); // Hide warning if dates are selected
+        setShowWarning(false); // Hide warning if dates are selected
     }
-  
-    const productDetails = {
-      ...product,
-      quantity: parseInt(quantity), // Ensure quantity is an integer
-      startDate: product.type === "Rental" ? startDate : null,
-      endDate: product.type === "Rental" ? endDate : null,
+
+    const rentalDuration = calculateRentalDuration();
+    const rentalPrice = calculateEstimatedPrice();
+
+    const cartItem = {
+        ...product,
+        quantity,
+        type: product.type,
+        startDate,
+        endDate,
+        rentalDuration,
+        price: rentalPrice, // Pass the calculated rental price
     };
-    addToCart(productDetails);
-    navigate('/cart'); // Navigate to the cart page after adding to cart
-  };
+
+    addToCart(cartItem); // Add the rental item to the cart
+    alert("Item added to cart!");
+    navigate('/cart'); // Navigate to the cart page
+};
+
 
   
 
@@ -144,7 +157,7 @@ const ProductPage = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full max-h-96 rounded-lg shadow-lg object-cover"
+              className="w-full h-[550px] sm:h-[650px] lg:h-[700px]rounded-lg shadow-lg object-cover"
             />
           </div>
         </div>
@@ -312,7 +325,7 @@ const ProductPage = () => {
         {/* Size Chart Modal */}
         {showSizeChart && (
   <div className="fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center z-50 transition-opacity duration-300 ease-in-out">
-    <div className="bg-white p-8 rounded-xl max-w-lg w-full shadow-xl relative overflow-hidden animate-fadeIn border-t-4 border-blue-500">
+    <div className="bg-white p-8 rounded-xl max-w-lg w-full shadow-xl relative overflow-hidden animate-fadeIn border-t-4 border-purple-500">
       
       {/* Close Button */}
       <button
@@ -336,7 +349,7 @@ const ProductPage = () => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-8 text-blue-500 mr-2"
-          fill="currentColor"
+          fill="purple"
           viewBox="0 0 24 24"
         >
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2V6zm0 8h2v2h-2v-2z" />
@@ -368,10 +381,10 @@ const ProductPage = () => {
             <p className="text-gray-600">Great product! Highly recommend.</p>
           </div>
           <div className="mb-4">
-            <p className="font-bold">Jane Smith</p>
+            <p className="font-bold">Tosinxnaps</p>
             <p className="text-sm text-yellow-400">★★★★★</p>
             <p className="text-gray-600">
-              Exceeded my expectations. Will buy again.
+              They are very beautiful enjoy the backdrops a lot..
             </p>
           </div>
         </div>

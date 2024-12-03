@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
     const [cartCount, setCartCount] = useState(0);
     const [user, setUser] = useState(null);
     const [guestId, setGuestId] = useState(localStorage.getItem('guestId') || null);
-    const [shippingCost, setShippingCost] = useState(0); // New shippingCost state
+    const [, setShippingCost] = useState(0); // New shippingCost state
 
     // Helper function to ensure the ID is always a string
     const normalizeId = (id) => (typeof id === 'string' ? id : String(id));
@@ -69,24 +69,77 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = async (product) => {
         const currentUserId = user ? user.uid : guestId; // Use user ID or guest ID
-        let { id, type, startDate, endDate, quantity } = product;
+        let { id, type, startDate, endDate, price, rentalDuration, quantity } = product;
         id = normalizeId(id);
-
-        const itemRef = doc(db, 'carts', currentUserId, 'items', id);
-        const existingItem = cart.find(item => 
-            item.id === id && 
-            ((type === 'rental' && item.startDate === startDate && item.endDate === endDate) || type !== 'rental')
-        );
-
-        if (existingItem) {
-            if (type !== 'rental') {
-                await setDoc(itemRef, { quantity: existingItem.quantity + (quantity || 1) }, { merge: true });
+    
+        if (type === "rental") {
+            // Validate rental dates
+            if (!startDate || !endDate) {
+                console.error("Start Date and End Date are required for rentals");
+                return;
             }
-            return;
+    
+            // Check if the item already exists in the cart with the same rental period
+            const existingItem = cart.find(
+                (item) =>
+                    item.id === id &&
+                    item.type === "rental" &&
+                    item.startDate === startDate &&
+                    item.endDate === endDate
+            );
+    
+            if (existingItem) {
+                console.log("Rental item with the same dates already exists in the cart.");
+                return;
+            }
+    
+            // Add rental item to the cart with rental details
+            const itemRef = doc(db, "carts", currentUserId, "items", id);
+            await setDoc(
+                itemRef,
+                {
+                    ...product,
+                    startDate,
+                    endDate,
+                    rentalDuration,
+                    totalCost: price * (quantity || 1), // Ensure cost reflects quantity
+                    isRental: true,
+                    quantity: quantity || 1,
+                },
+                { merge: true }
+            );
+        } else {
+            // Handle non-rental items
+            const itemRef = doc(db, "carts", currentUserId, "items", id);
+            const existingItem = cart.find((item) => item.id === id);
+            if (existingItem) {
+                // Update the quantity of an existing non-rental item
+                await setDoc(
+                    itemRef,
+                    {
+                        quantity: existingItem.quantity + (quantity || 1),
+                        totalCost: price * (existingItem.quantity + (quantity || 1)), // Update cost
+                    },
+                    { merge: true }
+                );
+            } else {
+                // Add a new non-rental item
+                await setDoc(
+                    itemRef,
+                    {
+                        ...product,
+                        quantity: quantity || 1,
+                        totalCost: price * (quantity || 1), // Add total cost
+                    },
+                    { merge: true }
+                );
+            }
         }
-
-        await setDoc(itemRef, { ...product, quantity: quantity || 1, isRental: type === 'rental' });
     };
+    
+    
+    
+    
 
     const removeFromCart = async (id) => {
         const currentUserId = user ? user.uid : guestId; // Use user ID or guest ID
@@ -134,7 +187,7 @@ export const CartProvider = ({ children }) => {
             }
             return total + item.price * (item.quantity || 1);
         }, 0);
-        return itemsTotal + shippingCost; // Include shippingCost in the total calculation
+        return itemsTotal ; // Include shippingCost in the total calculation
     };
 
     const updateShippingCost = (cost) => {
@@ -153,7 +206,7 @@ export const CartProvider = ({ children }) => {
             updateRentalDuration,
             updateQuantity,
             calculateTotal,
-            updateShippingCost, // Expose function to update shipping cost
+            setShippingCost: updateShippingCost 
         }}>
             {children}
         </CartContext.Provider>
