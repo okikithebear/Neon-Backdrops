@@ -185,7 +185,7 @@ const Header = () => {
           <div className="relative" ref={userDropdownRef}>
             <FaUser onClick={toggleUserDropdown} className="text-gray-700 hover:text-purple-600 cursor-pointer transition" />
             {isUserDropdownOpen && (
-              <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
+              <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="absolute right-0 mt-2 w-auto bg-white shadow-lg rounded-md z-10">
                 {user ? (
                   <>
                     <div className="px-4 py-2 text-gray-700">{`Hello, ${user.displayName || user.email}`}</div>
