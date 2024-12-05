@@ -86,7 +86,7 @@ const CartPage = () => {
                     <p className="text-gray-600 mb-6">Looks like you haven't added anything yet.</p>
                     <button
                         onClick={() => navigate('/shop')}
-                        className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors"
+                        className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg shadow hover:bg-purple-700 transition-colors"
                     >
                         Continue Shopping
                     </button>

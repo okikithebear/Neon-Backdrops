@@ -6,6 +6,49 @@ import { PaystackButton } from 'react-paystack';
 import { getAuth } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebaseConfig';
+import emailjs from 'emailjs-com';
+
+// Function to format currency
+const formatCurrency = (number) =>
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'NGN', minimumFractionDigits: 0 }).format(number);
+
+const sendConfirmationEmail = async (orderDetails) => {
+  const templateParams = {
+      customer_name: orderDetails.name,
+      customer_email: orderDetails.email,
+      order_items: JSON.stringify(orderDetails.cart),
+      order_total: formatCurrency(orderDetails.grandTotal),
+      order_shipping: formatCurrency(orderDetails.shippingCost),
+      order_id: orderDetails.id,
+      order_address: orderDetails.address,  // Include address in the email
+      order_state: orderDetails.state,      // Include state
+      order_city: orderDetails.city,        // Include city
+      order_country: orderDetails.country,  // Include country
+      order_phone: orderDetails.phone,      // Include phone
+      owner_email: 'neonbackdrops@gmail.com',
+  };
+
+  try {
+    // 1. Send email to the customer
+    const customerResponse = await emailjs.send(
+      process.env.REACT_APP_EMAIL_JS_SERVICE_ID,
+      process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID,
+      templateParams,  // Using the customer email in the params
+      process.env.REACT_APP_EMAIL_JS_USER_ID
+    );
+    console.log('Customer email sent successfully:', customerResponse);
+
+    // 2. Send email to the owner (owner gets the same details but no need for customer email field)
+    
+
+   
+    console.log('Owner email sent successfully:');
+
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
+};
+
 
 const CheckoutPage = () => {
   const { cart, calculateTotal, clearCart } = useContext(CartContext);
@@ -112,8 +155,14 @@ const CheckoutPage = () => {
         total: calculateTotal() - shippingCost,
         shippingCost: shippingCost,
         grandTotal: calculateTotal() + shippingCost,
+        address: formData.address,  // Added address
+        state: formData.state,      // Added state
+        city: formData.city,        // Added city
+        country: formData.country,  // Added country
+        phone: formData.phone,      // Added phone
       };
       await handleOrderSave();
+      await sendConfirmationEmail(orderDetails); // Send confirmation email
       clearCart();
       navigate('/order-confirmation', { state: orderDetails });
     } else {
@@ -124,11 +173,11 @@ const CheckoutPage = () => {
 };
 
 
-  const handleChange = e => {
+const handleChange = e => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
     setErrors(prevErrors => ({ ...prevErrors, [id]: '' })); // Clear error for this field
-  };
+};
 
   const formatCurrency = number =>
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'NGN', minimumFractionDigits: 0 }).format(number);

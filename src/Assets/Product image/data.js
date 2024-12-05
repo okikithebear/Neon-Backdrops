@@ -72,7 +72,7 @@ export const products = [
         name: "Rodeo Dust Painted Canvas Backdrop (RN#100)",
         category: "Rental",
         type: "Backdrop",
-        price: 400000,
+        price: 150000,
         color: "Blue",
         size: "Large",
         texture: "Mid",

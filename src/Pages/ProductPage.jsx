@@ -120,29 +120,26 @@ const handleEndDateChange = (e) => {
 
   // Handle Add to Cart with product details, including rental dates if applicable
   const handleAddToCart = () => {
-    if (product.type === "rental" && (!startDate || !endDate)) {
-        setShowWarning(true); // Show warning if dates are not selected
-        return;
+    if (product.type === "Rental" && (!startDate || !endDate)) {
+      setShowWarning(true); // Show warning if dates are not selected
+      return;
     } else {
-        setShowWarning(false); // Hide warning if dates are selected
+      setShowWarning(false); // Hide warning if dates are selected
     }
 
     const rentalDuration = calculateRentalDuration();
-    const rentalPrice = calculateEstimatedPrice();
+    const rentalPrice = rentalDuration * product.price * quantity;  // Calculate the rental price based on rental duration and quantity
 
-    const cartItem = {
-        ...product,
-        quantity,
-        type: product.type,
-        startDate,
-        endDate,
-        rentalDuration,
-        price: rentalPrice, // Pass the calculated rental price
+    const productDetails = {
+      ...product,
+      quantity: parseInt(quantity), // Ensure quantity is an integer
+      startDate: product.type === "Rental" ? startDate : null,
+      endDate: product.type === "Rental" ? endDate : null,
+      rentalPrice: product.type === "Rental" ? rentalPrice : null, // Add rentalPrice only for rental products
     };
 
-    addToCart(cartItem); // Add the rental item to the cart
-    alert("Item added to cart!");
-    navigate('/cart'); // Navigate to the cart page
+    addToCart(productDetails);  // Pass the productDetails including rentalPrice
+    navigate('/cart'); // Navigate to the cart page after adding to cart
 };
 
 

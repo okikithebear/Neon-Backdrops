@@ -51,8 +51,8 @@ const ContactForm = () => {
         "service_52egjue", // Your EmailJS service ID
         "template_oivlhzj", // Your EmailJS template ID
         {
-          firstName: values.firstName,
-          lastName: values.lastName,
+          firstName: values.firstName, // Maps to {{firstname}} in your EmailJS template
+          lastName: values.lastName,   // Maps to {{lastname}} in your EmailJS template
           email: values.email,
           subject: values.subject,
           message: values.message,

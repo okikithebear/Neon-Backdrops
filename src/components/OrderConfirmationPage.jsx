@@ -129,9 +129,9 @@ const OrderConfirmationPage = () => {
       <div className="mt-8 flex flex-col items-center space-y-4">
         <button
           onClick={handleDownloadInvoice}
-          className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="px-6 py-3 bg-purple-600 text-white rounded hover:bg-purple-700"
         >
-          Download Invoice
+          Please Download Invoice
         </button>
         <button
           onClick={() => navigate('/')}
