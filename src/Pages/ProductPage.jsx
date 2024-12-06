@@ -373,7 +373,7 @@ const handleEndDateChange = (e) => {
         </h2>
         <div className="border-t border-gray-300 pt-4">
           <div className="mb-4">
-            <p className="font-bold">John Doe</p>
+            <p className="font-bold">George Okro</p>
             <p className="text-sm text-yellow-400">★★★★☆</p>
             <p className="text-gray-600">Great product! Highly recommend.</p>
           </div>

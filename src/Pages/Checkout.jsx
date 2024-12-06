@@ -5,6 +5,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { PaystackButton } from 'react-paystack';
 import { getAuth } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
+import emptyCartImage from '../Assets/Images/shopping-cart.png';
 import { db } from '../firebaseConfig';
 import emailjs from 'emailjs-com';
 
@@ -183,15 +184,30 @@ const handleChange = e => {
     new Intl.NumberFormat('en-US', { style: 'currency', currency: 'NGN', minimumFractionDigits: 0 }).format(number);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8 space-y-2">
+    <div className="max-w-7xl mx-auto px-6 py-8 space-y-2  mb-40">
       <div className="text-gray-500 text-sm mb-2 mt-20">Home / Checkout</div>
       <div className="border-b border-gray-300 pb-2 mb-10">
         <h1 className="text-4xl font-bold text-gray-800">CHECKOUT</h1>
       </div>
 
       {cart.length === 0 ? (
-        <p className="text-lg text-gray-600">Your cart is empty!</p>
-      ) : (
+  <div className="flex flex-col items-center justify-center space-y-6 py-10">
+    <img 
+      src={emptyCartImage}  
+      alt="Empty Cart" 
+      className="w-48 h-48 object-contain opacity-80"
+    />
+    <p className="text-lg text-gray-700 font-medium">
+      Oops! Your cart is empty.
+    </p>
+    <button 
+      onClick={() => navigate('/shop')} // Adjust navigation logic as needed
+      className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out"
+    >
+      Start Shopping
+    </button>
+  </div>
+) : (
         <div className="space-y-8">
           <div className="bg-white shadow-lg rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-4 text-gray-700">Order Summary</h2>
