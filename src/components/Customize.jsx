@@ -8,19 +8,19 @@ import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Share from 'yet-another-react-lightbox/plugins/share';
 
 // Importing images directly
-import Image1 from '../Assets/Gallery/Themicheals.JPG';
-import Image2 from '../Assets/Gallery/Okoro.JPG';
-import Image3 from '../Assets/Gallery/Kamani.JPG';
-import Image4 from '../Assets/Gallery/Langs_le_.JPG';
+import Image1 from '../Assets/Gallery/Customize1.JPG';
+import Image2 from '../Assets/Gallery/Customize2.JPG';
+import Image3 from '../Assets/Gallery/Customize3.JPG';
+import Image4 from '../Assets/Gallery/Customize4.JPG';
 
 const images = [
-  { src: Image1, photographer: '@themichealsgallery' },
-  { src: Image2, photographer: '@georgeokoro' },
-  { src: Image3, photographer: '@kamaniphotography' },
-  { src: Image4, photographer: '@lang_le_photographe' },
+  { src: Image1, photographer: 'Creativity' },
+  { src: Image2, photographer: 'Vision' },
+  { src: Image3, photographer: 'Inspiration' },
+  { src: Image4, photographer: 'Muse' },
 ];
 
-const WorkGallery = () => {
+const Customize = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [visibleStartIndex, setVisibleStartIndex] = useState(0);
@@ -42,16 +42,30 @@ const WorkGallery = () => {
   };
 
   return (
-    <div className="gallery-container bg-white py-8 px-4 sm:px-8 md:px-12 lg:px-8 mb-10">
+    <div className="gallery-container bg-white py-8 px-4 sm:px-8 md:px-12 lg:px-16 mb-20">
       <h2 className="text-2xl md:text-4xl lg:text-3xl xl:text-6xl font-mulish text-center my-6 lg:my-10 text-black">
-  <span className="block flex items-center justify-center">
-    <i className="fa fa-camera-retro text-3xl mr-2"></i> {/* Camera Icon */}
-    Great Environments
-  </span>
-  Inspire Great Photographers
-</h2>
+        <span className="block flex items-center justify-center">
+          <i className="fa fa-paint-brush text-3xl mr-2"></i> {/* Updated Icon */}
+          Customize Your Own Designs
+        </span>
+        Let Your Creativity Shine
+      </h2>
 
-
+      {/* Text for customized backdrops with WhatsApp link */}
+      <div className="text-center my-6">
+        <p className="text-lg md:text-xl text-gray-700">
+          For customized backdrops, please{' '}
+          <a
+            href="https://wa.me/23490567879"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-600 hover:underline"
+          >
+            contact us on WhatsApp
+          </a>{' '}
+          at Neon Backdrops. Let’s make your vision a reality!
+        </p>
+      </div>
 
       <div className="relative flex items-center justify-center max-w-screen-xl mx-auto">
         {/* Mobile View: Single image slide container */}
@@ -65,7 +79,6 @@ const WorkGallery = () => {
               setIsOpen(true);
             }}
           />
-          
         </div>
 
         {/* Desktop View: Grid layout with navigation */}
@@ -138,4 +151,4 @@ const WorkGallery = () => {
   );
 };
 
-export default WorkGallery;
+export default Customize;

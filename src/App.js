@@ -32,6 +32,8 @@ import CheckoutPage from './Pages/Checkout';
 // import Founder from './Pages/About.jsx';
 import FAQ from './Pages/Faq.jsx';
 import OrderConfirmationPage from './components/OrderConfirmationPage.jsx';
+import Customize from './components/Customize.jsx';
+import PromoPopup from './components/PromoPopup.jsx';
 
 // Custom component to handle scrolling to top on route change
 function ScrollToTop() {
@@ -53,11 +55,13 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
+               <PromoPopup/>
                 <Hero />
                 <ProductCarousel />
                 <Gallery />
                 <AboutSection />
                 <WorkGallery />
+                <Customize/>
               </>
             } />
             <Route path="/backdrops" element={<Backdrops />} />

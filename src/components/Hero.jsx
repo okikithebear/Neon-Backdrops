@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../Style/Hero.css';
 import { motion } from 'framer-motion';
-import backgroundImage1 from '../Assets/Gallery/Main1.JPG';
-import backgroundImage2 from '../Assets/Gallery/Main4.jpg';
+import backgroundImage1 from '../Assets/Gallery/hero.jpeg';
+import backgroundImage2 from '../Assets/Gallery/hero.jpeg';
 
 const backgroundImages = [backgroundImage1, backgroundImage2];
 
@@ -49,7 +49,7 @@ function Hero() {
   MEETS CRAFTSMANSHIP
 </h1>
 
-        <p className="font-mulish text-lg md:text-2xl text-gray-300 mt-4 animate-fade-in-down">
+        <p className="font-mulish text-white text-lg md:text-2xl text-gray-300 mt-4 animate-fade-in-down">
           Elevate Your Space with Handcrafted Elegance
         </p>
         <motion.a
