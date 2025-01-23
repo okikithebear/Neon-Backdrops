@@ -43,11 +43,11 @@ const Customize = () => {
 
   return (
     <div className="gallery-container bg-white py-8 px-4 sm:px-8 md:px-12 lg:px-16 mb-20">
-     <h2 className="font-mulish text-center text-black my-6 lg:my-10">
+     <h2 className="text-2xl md:text-4xl lg:text-3xl xl:text-6xl font-mulish text-center my-6 lg:my-10 text-black">
   <span className="block flex items-center justify-center gap-2">
-    <i className="fa fa-paint-brush text-3xl sm:text-4xl"></i> {/* Updated Icon */}
-    <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">
-      Customize Your Own Designs
+    <i className="fa fa-paint-brush text-2xl sm:text-4xl"></i> {/* Updated Icon */}
+    <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold">
+      Customize Your  Designs
     </span>
   </span>
 </h2>
