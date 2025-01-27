@@ -9,10 +9,10 @@ const CartPage = () => {
     const navigate = useNavigate();
 
     const handleCheckout = () => {
-        // Pass cart details to checkout
         const rentalCartData = cart.map(item => ({
             id: item.id,
             rentalDates: item.rentalDates,
+            rentalDuration: item.rentalDuration,
             name: item.name,
             quantity: item.quantity,
             price: item.price,
@@ -53,6 +53,8 @@ const CartPage = () => {
                                         {item.isRental ? (
                                             <>
                                                 <span className="font-medium">Rental Duration:</span> {item.rentalDuration} days
+                                                <br />
+                                                <span className="font-medium">Rental Dates:</span> {item.rentalDates.start} to {item.rentalDates.end}
                                                 <br />
                                                 <span className="font-medium">Estimated Price:</span> ₦{(item.price * item.rentalDuration).toLocaleString('en-NG')}
                                             </>
@@ -95,9 +97,8 @@ const CartPage = () => {
                             </div>
                         </div>
                     ))}
-
-                    {/* Shipping Section */}
-                    <div className="bg-white p-6 rounded-lg shadow-md mt-8">
+                     {/* Shipping Section */}
+                     <div className="bg-white p-6 rounded-lg shadow-md mt-8">
     <h3 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
         <i className="fas fa-shipping-fast mr-3 text-purple-600 text-xl" />
         Shipping Information
@@ -127,7 +128,6 @@ const CartPage = () => {
         </div>
     </div>
 </div>
-
 
                     {/* Cart Summary */}
                     <div className="bg-white p-6 rounded-lg shadow-md mt-8">

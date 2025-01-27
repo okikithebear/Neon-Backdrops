@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { motion, useInView } from 'framer-motion';
-import AboutImage1 from '../Assets/Gallery/Main2.jpg';
-import AboutImage2 from '../Assets/Gallery/Main3.JPG';
+import AboutImage1 from '../Assets/Gallery/Backdrop.jpeg';
+import AboutImage2 from '../Assets/Gallery/Backdrop2.jpeg';
 
 const images = [AboutImage1, AboutImage2]; // Array of images
 

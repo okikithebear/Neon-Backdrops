@@ -136,10 +136,6 @@ export const CartProvider = ({ children }) => {
             }
         }
     };
-    
-    
-    
-    
 
     const removeFromCart = async (id) => {
         const currentUserId = user ? user.uid : guestId; // Use user ID or guest ID

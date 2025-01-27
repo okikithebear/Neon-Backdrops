@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import '../Style/Header.css'
 import { FaShoppingCart, FaSearch, FaChevronDown, FaUser } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { toast } from 'react-toastify'; // Import toast

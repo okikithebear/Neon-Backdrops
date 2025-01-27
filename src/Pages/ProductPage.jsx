@@ -119,27 +119,27 @@ const handleEndDateChange = (e) => {
   };
 
   // Handle Add to Cart with product details, including rental dates if applicable
-  const handleAddToCart = () => {
-    if (product.type === "Rental" && (!startDate || !endDate)) {
-      setShowWarning(true); // Show warning if dates are not selected
-      return;
-    } else {
-      setShowWarning(false); // Hide warning if dates are selected
-    }
+const handleAddToCart = () => {
+  if (product.type === "Rental" && (!startDate || !endDate)) {
+    setShowWarning(true); // Show warning if dates are not selected
+    return;
+  } else {
+    setShowWarning(false); // Hide warning if dates are selected
+  }
 
-    const rentalDuration = calculateRentalDuration();
-    const rentalPrice = rentalDuration * product.price * quantity;  // Calculate the rental price based on rental duration and quantity
+  const rentalDuration = calculateRentalDuration();
+  const rentalPrice = rentalDuration * product.price * quantity;  // Calculate the rental price based on rental duration and quantity
 
-    const productDetails = {
-      ...product,
-      quantity: parseInt(quantity), // Ensure quantity is an integer
-      startDate: product.type === "Rental" ? startDate : null,
-      endDate: product.type === "Rental" ? endDate : null,
-      rentalPrice: product.type === "Rental" ? rentalPrice : null, // Add rentalPrice only for rental products
-    };
+  const productDetails = {
+    ...product,
+    quantity: parseInt(quantity), // Ensure quantity is an integer
+    startDate: product.type === "Rental" ? startDate : null,
+    endDate: product.type === "Rental" ? endDate : null,
+    rentalPrice: product.type === "Rental" ? rentalPrice : null, // Add rentalPrice only for rental products
+  };
 
-    addToCart(productDetails);  // Pass the productDetails including rentalPrice
-    navigate('/cart'); // Navigate to the cart page after adding to cart
+  addToCart(productDetails);  // Pass the productDetails including rentalPrice
+  navigate('/cart'); // Navigate to the cart page after adding to cart
 };
 
 
