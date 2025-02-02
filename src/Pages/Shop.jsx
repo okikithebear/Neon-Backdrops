@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { products } from "../Assets/Product image/data.js";
 import Pagination from "../components/Pagination.jsx"; // Import the Pagination component
@@ -68,35 +68,43 @@ const Shop = () => {
 
         {/* Product Grid with Responsive Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentProducts.map((product) => (
-            <Link to={`/product/${product.id}`} key={product.id}>
-              <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-[500px] sm:h-[350px] lg:h-[400px] object-cover mb-4"
-                />
-                <h1 className="text-purple-600 mb-2">{product.type}</h1>
-                <h2 className="font-bold text-gray-800 mb-3">
-                  {product.name}
-                </h2>
-                <p className="text-gray-600 font-bold">
-                  ₦{formatCurrency(product.price)}
-                </p>
-                <button
-                  className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
-                    product.inStock
-                      ? "bg-purple-500 hover:bg-purple-600"
-                      : "bg-gray-300 cursor-not-allowed"
-                  }`}
-                  disabled={!product.inStock}
-                >
-                  <AiOutlineShoppingCart className="mr-2" />
-                  {product.inStock ? "Add to Cart" : "Out of Stock"}
-                </button>
-              </div>
-            </Link>
-          ))}
+          {currentProducts.map((product) => {
+            // Assume 10% discount for simplicity
+            const discountedPrice = product.price * 0.9; 
+
+            return (
+              <Link to={`/product/${product.id}`} key={product.id}>
+                <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-[500px] sm:h-[350px] lg:h-[400px] object-cover mb-4"
+                  />
+                  <h1 className="text-purple-600 mb-2">{product.type}</h1>
+                  <h2 className="font-bold text-gray-800 mb-3">
+                    {product.name}
+                  </h2>
+                  <p className="text-red-600 font-bold line-through">
+                    ₦{formatCurrency(product.price)}
+                  </p>
+                  <p className="text-xl font-bold text-purple-600">
+                    ₦{formatCurrency(discountedPrice)}
+                  </p>
+                  <button
+                    className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
+                      product.inStock
+                        ? "bg-purple-500 hover:bg-purple-600"
+                        : "bg-gray-300 cursor-not-allowed"
+                    }`}
+                    disabled={!product.inStock}
+                  >
+                    <AiOutlineShoppingCart className="mr-2" />
+                    {product.inStock ? "Add to Cart" : "Out of Stock"}
+                  </button>
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Pagination Component */}

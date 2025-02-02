@@ -177,9 +177,11 @@ const handleAddToCart = () => {
           </div>
 
           {/* Price */}
-          <p className="text-2xl font-bold text--600">
-            ₦{formatCurrency(product.price)}
-          </p>
+         
+<p className="text-2xl font-bold text-red-600">
+  ₦{formatCurrency(product.discountedPrice || product.price)}
+</p>
+
 
           {/* Stock Availability */}
           <p

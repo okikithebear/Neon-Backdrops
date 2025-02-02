@@ -71,8 +71,8 @@ const Shop = () => {
           .map((product) => (
             <div key={product.id} className="border p-4">
               <img src={product.image} alt={product.name} className="h-48 w-full object-cover" />
-              <h3 className="text-lg font-medium mt-2">{product.name}</h3>
-              <p className="text-lg">₦{product.price.toLocaleString()}</p>
+              <h3 className="text-3xl font-medium mt-2 text-red-400">{product.name}</h3>
+              <p className="text-lg text-red-400">₦{product.price.toLocaleString()}</p>
               <button
                 className={`mt-2 px-4 py-2 rounded ${product.inStock ? "bg-green-500" : "bg-red-500"}`}
                 disabled={!product.inStock}

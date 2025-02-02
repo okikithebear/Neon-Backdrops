@@ -92,7 +92,7 @@ const CartPage = () => {
                                     className="mt-2 text-red-500 hover:text-red-600 transition"
                                     aria-label="Remove item"
                                 >
-                                    <FaTrash className="text-lg" />
+                                    <FaTrash className="text-lg tex-red-400" />
                                 </button>
                             </div>
                         </div>
