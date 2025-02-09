@@ -16,6 +16,20 @@ import product15 from '../Real-product/olive.JPG';
 import product16 from '../Real-product/orange.JPG';
 import product17 from '../Real-product/yellow and brown.JPG';
 import product18 from '../Real-product/yellow sun.JPG';
+import product19 from '../Real-product/119.JPG';
+import product20 from '../Real-product/120.JPG';
+import product21 from '../Real-product/121.JPG';
+import product22 from '../Real-product/122.JPG';
+import product23 from '../Real-product/123.JPG';
+import product24 from '../Real-product/124.JPG';
+import product25 from '../Real-product/125.JPG';
+import product26 from '../Real-product/126.JPG';
+import product27 from '../Real-product/127.JPG';
+import product28 from '../Real-product/128.JPG';
+import product29 from '../Real-product/129.JPG';
+import product30 from '../Real-product/130.jpg';
+import product31 from '../Real-product/131.JPG';
+
 
 
 export const navigation = [
@@ -345,6 +359,201 @@ export const products = [
     },
     {
         id: 19,
+        name: "Almond Cloud Patches Painted Canvas Backdrop (SN#119)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product19,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 20,
+        name: "Creamy Dreamy Painted Canvas Backdrop (SN#120)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product20,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 21,
+        name: "Crush Cramsicle Painted Canvas Backdrop (SN#121)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product21,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 22,
+        name: "Drak Magic Hour Painted Canvas Backdrop (SN#122)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product22,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 23,
+        name: "Secret Garden Painted Canvas Backdrop (SN#123)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product23,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 24,
+        name: "Polka Dot Paradise Painted Canvas Backdrop (SN#124)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product24,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 25,
+        name: "Sunflower Field Painted Canvas Backdrop (SN#125)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product25,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 26,
+        name: "Sandy Toes Painted Canvas Backdrop (SN#126)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product26,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 27,
+        name: "Mocha Magic Painted Canvas Backdrop (SN#127)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product27,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 28,
+        name: "Blue Sea Painted Canvas Backdrop (SN#128)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product28,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 29,
+        name: "Sunset Painted Canvas Backdrop (SN#129)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product29,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 30,
+        name: "Tipsy Tea Painted Canvas Backdrop (SN#130)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product30,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 31,
+        name: "Clay Stone Cliff Painted Canvas Backdrop (SN#131)",
+        category: "Backdrop",
+        type: "Backdrop",
+        price: 150000 ,
+        discountedPrice: 150000 * 0.90,
+        color: "Yellow",
+        size: "Large",
+        texture: "Solid",
+        image: product31,
+        inStock: true,
+        description: "The Lavender Fields backdrop adds a touch of serenity and color, perfect for any romantic shoot.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 19,
         name: "Rodeo Dust Painted Canvas Backdrop (RN#100)",
         category: "Rental",
         type: "Rental",
@@ -541,7 +750,7 @@ export const products = [
     },
     {
         id: 33,
-        name: "Warm Amber Painted Canvas Backdrop (RN#1114)",
+        name: "Warm Amber Painted Canvas Backdrop (RN#114)",
         category: "Rental",
         type: "Rental",
         price: 10000,
@@ -594,7 +803,193 @@ export const products = [
         inStock: true,
         description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
-    }
+    },
+    {
+        id: 37,
+        name: "Almond Cloud Patches Painted Canvas Backdrop (RN#119)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product19,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 38,
+        name: "Creamy Dreamy Painted Canvas Backdrop (RN#120)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product20,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 39,
+        name: "Crush Creamsicle Painted Canvas Backdrop (RN#121)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product21,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 40,
+        name: "Dark Magic Hour Painted Canvas Backdrop (RN#122)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product22,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 41,
+        name: "Secret Garden Painted Canvas Backdrop (RN#123)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product23,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 42,
+        name: "Polka Dot Paradise Painted Canvas Backdrop (RN#124)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product24,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 43,
+        name: "Sunflower Field Painted Canvas Backdrop (RN#125)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product25,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 44,
+        name: "Sandy Toes Painted Canvas Backdrop (RN#126)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product26,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 45,
+        name: "Mocha Magic Painted Canvas Backdrop (RN#127)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product27,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 46,
+        name: "Blue Sea Painted Canvas Backdrop (RN#128)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product28,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 47,
+        name: "Sunset Painted Canvas Backdrop (RN#129)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product29,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 48,
+        name: "Tipsy Tea Painted Canvas Backdrop (RN#130)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product30,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    {
+        id: 49,
+        name: "Clay Stone Cliff Painted Canvas Backdrop (RN#131)",
+        category: "Rental",
+        type: "Rental",
+        price: 10000,
+        color: "Gray",
+        size: "Large",
+        texture: "Solid",
+        image: product31,
+        inStock: true,
+        description: "Transform your scenes with the Eclipse Drift backdrop, delivering a mysterious gray fog to enhance any artistic vision.",
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+    },
+    
+    
+    
+    
     
 ];
 

@@ -43,15 +43,15 @@ const Header = () => {
      e.preventDefault();
      if (searchQuery) {
        const searchRoutes = {
-         backdrops: '/backdrops',
-         rentals: '/rentals',
-         purchase: '/purchase',
-         digital: '/digital-backdrops',
-         contact: '/contact',
-         about: '/about',
-         journal: '/journal',
-         shop: '/shop',
-         account: '/my-account',
+         backdrops : '/backdrops',
+         rentals : '/rentals',
+         purchase : '/purchase',
+         digital : '/digital-backdrops',
+         contact : '/contact',
+         about : '/about',
+         journal : '/journal',
+         shop : '/shop',
+         account : '/my-account',
        };
        const targetPath = searchRoutes[searchQuery.toLowerCase()] || null;
        if (targetPath) navigate(targetPath);
