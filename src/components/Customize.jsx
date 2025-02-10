@@ -58,7 +58,7 @@ const Customize = () => {
         <p className="text-lg md:text-xl text-gray-700">
           For customized backdrops, please{' '}
           <a
-            href="https://wa.me/23490567879"
+            href="https://wa.me/2347033718653"
             target="_blank"
             rel="noopener noreferrer"
             className="text-purple-600 hover:underline"

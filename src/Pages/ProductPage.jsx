@@ -1,94 +1,104 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom"; // Import useNavigate
+import { useParams, useNavigate } from "react-router-dom";
 import { products } from "../Assets/Product image/data";
-import { FaStar, FaRegStar } from "react-icons/fa"; // Font Awesome stars for ratings
-import { AiOutlineShoppingCart } from "react-icons/ai"; // Shopping cart icon
-import { MdOutlineInfo } from "react-icons/md"; // Information icon
+import { FaStar, FaRegStar } from "react-icons/fa";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { MdOutlineInfo } from "react-icons/md";
 import Breadcrumb from "../components/Breadcrumb";
-import { CartContext } from '../Context/CartContext'; // Import the Cart Context
-import SizeChart from "../components/SizeChart"; // Import the SizeChart component
+import { CartContext } from "../Context/CartContext";
+import SizeChart from "../components/SizeChart";
 
+// Main ProductPage Component
 const ProductPage = () => {
   const { id } = useParams();
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
+  
+  // Find the product based on the id parameter
   const product = products.find((p) => p.id === parseInt(id));
+  
+  // Local state management
   const [quantity, setQuantity] = useState(1);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [showWarning, setShowWarning] = useState(false); 
-  const { addToCart } = useContext(CartContext); // Access the addToCart function from context
+  const [showWarning, setShowWarning] = useState(false);
   const [showSizeChart, setShowSizeChart] = useState(false);
 
-    // Scroll to the top when the component mounts
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  // Access addToCart function from global CartContext
+  const { addToCart } = useContext(CartContext);
   
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // If product is not found, display an error message
   if (!product) {
     return <div>Product not found</div>;
   }
 
+  // Toggle the Size Chart modal
   const toggleSizeChart = () => {
     setShowSizeChart((prev) => !prev);
   };
 
-
+  // Data for the Size Chart
   const sizeChartData = {
     sizes: [
       { label: "Small", width: "7x12", height: "7ft" },
       { label: "Medium", width: "8x8", height: "8ft" },
       { label: "Large", width: "10x10", height: "10ft" },
       { label: "X-Large", width: "12x12", height: "12ft" },
-    ]
+    ],
   };
-  
-  // Function to handle quantity changes
+
+  // Update quantity ensuring a minimum of 1
   const handleQuantityChange = (e) => {
     const newQuantity = Math.max(1, parseInt(e.target.value));
     setQuantity(newQuantity);
   };
 
+  // Validate and update rental start date
   const handleStartDateChange = (e) => {
     const date = e.target.value;
     if (endDate && new Date(date) >= new Date(endDate)) {
-        alert("Start Date must be before End Date.");
+      alert("Start Date must be before End Date.");
     } else {
-        setStartDate(date);
-        setShowWarning(false);
+      setStartDate(date);
+      setShowWarning(false);
     }
-};
+  };
 
-const handleEndDateChange = (e) => {
+  // Validate and update rental end date
+  const handleEndDateChange = (e) => {
     const date = e.target.value;
     if (startDate && new Date(date) <= new Date(startDate)) {
-        alert("End Date must be after Start Date.");
+      alert("End Date must be after Start Date.");
     } else {
-        setEndDate(date);
-        setShowWarning(false);
+      setEndDate(date);
+      setShowWarning(false);
     }
-};
+  };
 
-
-  // Calculate the rental duration in days
+  // Calculate rental duration (in days)
   const calculateRentalDuration = () => {
     if (startDate && endDate) {
       const start = new Date(startDate);
       const end = new Date(endDate);
       const timeDiff = end - start;
       const daysDiff = timeDiff / (1000 * 3600 * 24);
-      return daysDiff >= 0 ? daysDiff + 1 : 0; // Add 1 day to include the last day
+      return daysDiff >= 0 ? daysDiff + 1 : 0; // +1 to include the last day
     }
     return 0;
   };
 
-  // Calculate the estimated price
+  // Calculate estimated price for rentals
   const calculateEstimatedPrice = () => {
     const rentalDuration = calculateRentalDuration();
     const estimatedPrice = rentalDuration * product.price * quantity;
     return estimatedPrice > 0 ? estimatedPrice : 0;
   };
 
-  // Pop-up for rental information
+  // Render rental popup information when rental duration is valid
   const renderRentalPopup = () => {
     const rentalDuration = calculateRentalDuration();
     const estimatedPrice = calculateEstimatedPrice();
@@ -113,37 +123,36 @@ const handleEndDateChange = (e) => {
     );
   };
 
-  // Function to format currency
+  // Format number as currency with commas
   const formatCurrency = (amount) => {
     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  // Handle Add to Cart with product details, including rental dates if applicable
-const handleAddToCart = () => {
-  if (product.type === "Rental" && (!startDate || !endDate)) {
-    setShowWarning(true); // Show warning if dates are not selected
-    return;
-  } else {
-    setShowWarning(false); // Hide warning if dates are selected
-  }
+  // Handle Add to Cart action; for rentals, ensure dates are selected
+  const handleAddToCart = () => {
+    if (product.type === "Rental" && (!startDate || !endDate)) {
+      setShowWarning(true);
+      return;
+    } else {
+      setShowWarning(false);
+    }
 
-  const rentalDuration = calculateRentalDuration();
-  const rentalPrice = rentalDuration * product.price * quantity;  // Calculate the rental price based on rental duration and quantity
+    const rentalDuration = calculateRentalDuration();
+    const rentalPrice =
+      product.type === "Rental" ? rentalDuration * product.price * quantity : null;
 
-  const productDetails = {
-    ...product,
-    quantity: parseInt(quantity), // Ensure quantity is an integer
-    startDate: product.type === "Rental" ? startDate : null,
-    endDate: product.type === "Rental" ? endDate : null,
-    rentalPrice: product.type === "Rental" ? rentalPrice : null, // Add rentalPrice only for rental products
+    // Build product details object (including rental details if applicable)
+    const productDetails = {
+      ...product,
+      quantity: parseInt(quantity),
+      startDate: product.type === "Rental" ? startDate : null,
+      endDate: product.type === "Rental" ? endDate : null,
+      rentalPrice: rentalPrice,
+    };
+
+    addToCart(productDetails);
+    navigate("/cart");
   };
-
-  addToCart(productDetails);  // Pass the productDetails including rentalPrice
-  navigate('/cart'); // Navigate to the cart page after adding to cart
-};
-
-
-  
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-8 mt-20">
@@ -154,15 +163,15 @@ const handleAddToCart = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-[550px] sm:h-[650px] lg:h-[700px]rounded-lg shadow-lg object-cover"
+              className="w-full h-[550px] sm:h-[650px] lg:h-[700px] rounded-lg shadow-lg object-cover"
             />
           </div>
         </div>
 
         {/* Product Details */}
         <div className="lg:w-1/2 space-y-4">
-          {/* Breadcrumb Navigation */}
           <Breadcrumb productName={product.name} />
+
           {/* Product Title */}
           <h1 className="text-3xl font-bold text-gray-800">{product.name}</h1>
 
@@ -177,11 +186,9 @@ const handleAddToCart = () => {
           </div>
 
           {/* Price */}
-         
-<p className="text-2xl font-bold text-red-600">
-  ₦{formatCurrency(product.discountedPrice || product.price)}
-</p>
-
+          <p className="text-2xl font-bold text-red-600">
+            ₦{formatCurrency(product.discountedPrice || product.price)}
+          </p>
 
           {/* Stock Availability */}
           <p
@@ -192,7 +199,7 @@ const handleAddToCart = () => {
             {product.inStock ? "In Stock" : "Out of Stock"}
           </p>
 
-          {/* Product Size, Color, and Texture */}
+          {/* Product Specifications */}
           <div className="space-y-2">
             <p className="text-gray-600">
               <strong>Size:</strong> {product.size}
@@ -242,14 +249,14 @@ const handleAddToCart = () => {
                 </div>
               </div>
               {showWarning && (
-            <div className="mt-4 p-4 bg-red-100 text-red-600 rounded-lg">
-              Please select both a start and end date for the rental.
-            </div>
-          )}
+                <div className="mt-4 p-4 bg-red-100 text-red-600 rounded-lg">
+                  Please select both a start and end date for the rental.
+                </div>
+              )}
               {renderRentalPopup()}
             </div>
           )}
-          
+
           {/* Delivery Information */}
           <p className="text-gray-600 text-sm">
             <MdOutlineInfo className="inline-block mr-1" />
@@ -270,12 +277,10 @@ const handleAddToCart = () => {
             {product.inStock ? "Add to Cart" : "Out of Stock"}
           </button>
 
-        
-
           {/* Description Accordion */}
           <div className="mt-6">
             <details className="group border-b border-gray-300 pb-2">
-              <summary className="flex justify-between items-center font-bold text-purple-800  cursor-pointer">
+              <summary className="flex justify-between items-center font-bold text-purple-800 cursor-pointer">
                 <span>Product Description</span>
                 <span className="transform transition-transform duration-300 group-open:rotate-180">
                   ▼
@@ -304,69 +309,66 @@ const handleAddToCart = () => {
         </div>
       </div>
 
-       {/* Size Chart Button */}
-       <button
-  onClick={toggleSizeChart}
-  className="text-purple-500 font-semibold inline-flex items-center space-x-1 hover:text-purple-700 hover:underline hover:shadow-lg transition-all duration-200 ease-in-out mb-4 mt-8"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-5 w-5"
-    fill="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2V6zm0 8h2v2h-2v-2z" />
-  </svg>
-  <span>View Size Chart</span>
-</button>
-
-
-        {/* Size Chart Modal */}
-        {showSizeChart && (
-  <div className="fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center z-50 transition-opacity duration-300 ease-in-out">
-    <div className="bg-white p-8 rounded-xl max-w-lg w-full shadow-xl relative overflow-hidden animate-fadeIn border-t-4 border-purple-500">
-      
-      {/* Close Button */}
+      {/* Size Chart Button */}
       <button
         onClick={toggleSizeChart}
-        className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition duration-200 ease-in-out"
-        aria-label="Close"
+        className="text-purple-500 font-semibold inline-flex items-center space-x-1 hover:text-purple-700 hover:underline hover:shadow-lg transition-all duration-200 ease-in-out mb-4 mt-8"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-
-      {/* Header with Icon */}
-      <div className="flex items-center justify-center mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-8 w-8 text-blue-500 mr-2"
-          fill="purple"
+          className="h-5 w-5"
+          fill="currentColor"
           viewBox="0 0 24 24"
         >
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2V6zm0 8h2v2h-2v-2z" />
         </svg>
-        <h3 className="text-2xl font-semibold text-gray-700">Size Chart</h3>
-      </div>
+        <span>View Size Chart</span>
+      </button>
 
-      {/* Size Chart Content */}
-      <div className="bg-gray-100 p-4 rounded-lg text-center">
-        <SizeChart sizes={sizeChartData.sizes} />
-      </div>
-
-      
-    </div>
-  </div>
-)}
-
-
+      {/* Size Chart Modal */}
+      {showSizeChart && (
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center z-50 transition-opacity duration-300 ease-in-out">
+          <div className="bg-white p-8 rounded-xl max-w-lg w-full shadow-xl relative overflow-hidden animate-fadeIn border-t-4 border-purple-500">
+            {/* Close Button */}
+            <button
+              onClick={toggleSizeChart}
+              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition duration-200 ease-in-out"
+              aria-label="Close"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            {/* Header with Icon */}
+            <div className="flex items-center justify-center mb-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-blue-500 mr-2"
+                fill="purple"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2V6zm0 8h2v2h-2v-2z" />
+              </svg>
+              <h3 className="text-2xl font-semibold text-gray-700">Size Chart</h3>
+            </div>
+            {/* Size Chart Content */}
+            <div className="bg-gray-100 p-4 rounded-lg text-center">
+              <SizeChart sizes={sizeChartData.sizes} />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Customer Reviews Section */}
       <div className="mt-10">
@@ -383,7 +385,7 @@ const handleAddToCart = () => {
             <p className="font-bold">Tosinxnaps</p>
             <p className="text-sm text-yellow-400">★★★★★</p>
             <p className="text-gray-600">
-              They are very beautiful enjoy the backdrops a lot..
+              They are very beautiful. I enjoy the backdrops a lot.
             </p>
           </div>
         </div>

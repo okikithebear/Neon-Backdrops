@@ -553,7 +553,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 19,
+        id: 32,
         name: "Rodeo Dust Painted Canvas Backdrop (RN#100)",
         category: "Rental",
         type: "Rental",
@@ -567,7 +567,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 20,
+        id: 33,
         name: "Clay Light Painted Canvas Backdrop (SN#102) (RN#101)",
         category: "Rental",
         type: "Rental",
@@ -581,7 +581,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 21,
+        id: 34,
         name: "White Cat Painted Canvas Backdrop(RN#102)",
         category: "Rental",
         type: "Rental",
@@ -595,7 +595,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 22,
+        id: 35,
         name: "Blush Gray Painted Canvas Backdrop (RN#103)",
         category: "Rental",
         type: "Rental",
@@ -609,7 +609,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 23,
+        id: 36,
         name: "Cedar Stone Painted Canvas Backdrop (RN#104)",
         category: "Rental",
         type: "Rental",
@@ -623,7 +623,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 24,
+        id: 37,
         name: "Golden Hour Painted Canvas Backdrop(RN#105)",
         category: "Rental",
         type: "Rental",
@@ -637,7 +637,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 25,
+        id: 38,
         name: "Sunset Sky Painted Canvas Backdrop (RN#106)",
         category: "Rental",
         type: "Rental",
@@ -651,7 +651,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 26,
+        id: 39,
         name: "Foggy Morning Painted Canvas Backdrop (RN#107)",
         category: "Rental",
         type: "Rental",
@@ -665,7 +665,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 27,
+        id: 40,
         name: "Dusty Rose Painted Canvas Backdrop (RN#108)",
         category: "Rental",
         type: "Rental",
@@ -679,7 +679,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 28,
+        id: 41,
         name: "Rustic Charm Painted Canvas Backdrop (RN#109)",
         category: "Rental",
         type: "Rental",
@@ -693,7 +693,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 29,
+        id: 42,
         name: "Olive Brown Painted Canvas Backdrop (RN#110)",
         category: "Rental",
         type: "Rental",
@@ -707,7 +707,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 30,
+        id: 43,
         name: "Twilight Mist Painted Canvas Backdrop (RN#111)",
         category: "Rental",
         type: "Rental",
@@ -721,7 +721,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },  
     {
-        id: 31,
+        id: 44,
         name: "Midnight Blue Painted Canvas Backdrop (RN#112)",
         category: "Rental",
         type: "Rental",
@@ -735,7 +735,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 32,
+        id: 45,
         name: "Silver Lining Painted Canvas Backdrop (RN#113)",
         category: "Rental",
         type: "Rental",
@@ -749,7 +749,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 33,
+        id: 46,
         name: "Warm Amber Painted Canvas Backdrop (RN#114)",
         category: "Rental",
         type: "Rental",
@@ -763,7 +763,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 34,
+        id: 47,
         name: "Ocean Depths Painted Canvas Backdrop (RN#116)",
         category: "Rental",
         type: "Rental",
@@ -777,7 +777,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 35,
+        id: 48,
         name: "Pine Forest Painted Canvas Backdrop (RN#117)",
         category: "Rental",
         type: "Rental",
@@ -791,7 +791,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 36,
+        id: 49,
         name: "Yellow Fields Painted Canvas Backdrop (RN#118)",
         category: "Rental",
         type: "Rental",
@@ -805,7 +805,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 37,
+        id: 50,
         name: "Almond Cloud Patches Painted Canvas Backdrop (RN#119)",
         category: "Rental",
         type: "Rental",
@@ -819,7 +819,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 38,
+        id: 51,
         name: "Creamy Dreamy Painted Canvas Backdrop (RN#120)",
         category: "Rental",
         type: "Rental",
@@ -833,7 +833,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 39,
+        id: 52,
         name: "Crush Creamsicle Painted Canvas Backdrop (RN#121)",
         category: "Rental",
         type: "Rental",
@@ -847,7 +847,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 40,
+        id: 53,
         name: "Dark Magic Hour Painted Canvas Backdrop (RN#122)",
         category: "Rental",
         type: "Rental",
@@ -861,7 +861,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 41,
+        id: 55,
         name: "Secret Garden Painted Canvas Backdrop (RN#123)",
         category: "Rental",
         type: "Rental",
@@ -875,7 +875,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 42,
+        id: 56,
         name: "Polka Dot Paradise Painted Canvas Backdrop (RN#124)",
         category: "Rental",
         type: "Rental",
@@ -889,7 +889,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 43,
+        id: 57,
         name: "Sunflower Field Painted Canvas Backdrop (RN#125)",
         category: "Rental",
         type: "Rental",
@@ -903,7 +903,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 44,
+        id: 58,
         name: "Sandy Toes Painted Canvas Backdrop (RN#126)",
         category: "Rental",
         type: "Rental",
@@ -917,7 +917,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 45,
+        id: 59,
         name: "Mocha Magic Painted Canvas Backdrop (RN#127)",
         category: "Rental",
         type: "Rental",
@@ -931,7 +931,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 46,
+        id: 60,
         name: "Blue Sea Painted Canvas Backdrop (RN#128)",
         category: "Rental",
         type: "Rental",
@@ -945,7 +945,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 47,
+        id: 61,
         name: "Sunset Painted Canvas Backdrop (RN#129)",
         category: "Rental",
         type: "Rental",
@@ -959,7 +959,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 48,
+        id: 62,
         name: "Tipsy Tea Painted Canvas Backdrop (RN#130)",
         category: "Rental",
         type: "Rental",
@@ -973,7 +973,7 @@ export const products = [
         returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
     },
     {
-        id: 49,
+        id: 63,
         name: "Clay Stone Cliff Painted Canvas Backdrop (RN#131)",
         category: "Rental",
         type: "Rental",

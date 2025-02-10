@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'; // Import toast
 import { CgClose } from 'react-icons/cg';
 import { MdMenu } from 'react-icons/md';
 import { motion } from 'framer-motion';
+import { AnimatePresence} from 'framer-motion';
 import { auth } from '../firebaseConfig'; // Import Firebase auth
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useCart } from '../Context/CartContext'; // Import the useCart hook
@@ -39,27 +40,40 @@ const Header = () => {
      }
    };
  
-   const handleSearchSubmit = (e) => {
-     e.preventDefault();
-     if (searchQuery) {
-       const searchRoutes = {
-         backdrops : '/backdrops',
-         rentals : '/rentals',
-         purchase : '/purchase',
-         digital : '/digital-backdrops',
-         contact : '/contact',
-         about : '/about',
-         journal : '/journal',
-         shop : '/shop',
-         account : '/my-account',
-       };
-       const targetPath = searchRoutes[searchQuery.toLowerCase()] || null;
-       if (targetPath) navigate(targetPath);
-       else toast.error('Page not found.');
-       setSearchQuery('');
-       setIsSearchOpen(false);
-     }
-   };
+   // Define the routes once outside the handler to avoid recreating them on every render.
+const SEARCH_ROUTES = {
+  backdrops: '/backdrops',
+  rentals: '/rentals',
+  purchase: '/purchase',
+  digital: '/digital-backdrops',
+  contact: '/contact',
+  about: '/about',
+  journal: '/journal',
+  shop: '/shop',
+  account: '/my-account',
+};
+
+const handleSearchSubmit = (e) => {
+  e.preventDefault();
+
+  // Trim and normalize the search query
+  const query = searchQuery?.trim().toLowerCase();
+  if (!query) return; // Exit early if the query is empty
+
+  // Lookup the target path using the normalized query
+  const targetPath = SEARCH_ROUTES[query];
+
+  if (targetPath) {
+    navigate(targetPath);
+  } else {
+    toast.error('Page not found.');
+  }
+
+  // Reset the search state
+  setSearchQuery('');
+  setIsSearchOpen(false);
+};
+
  
    useEffect(() => {
      const unsubscribe = onAuthStateChanged(auth, setUser);
@@ -175,13 +189,26 @@ const Header = () => {
               </button>
             </form>
           )}
-          <div className="relative">
+       <div className="relative">
             <FaShoppingCart
               className="text-gray-700 hover:text-purple-600 cursor-pointer transition duration-300 transform hover:scale-125"
               onClick={() => navigate('/cart')}
             />
-            {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+            <AnimatePresence>
+              {cartCount > 0 && (
+                <motion.span
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0, opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-white text-xs font-bold"
+                >
+                  {cartCount}
+                </motion.span>
+              )}
+            </AnimatePresence>
           </div>
+
           
           <div className="relative" ref={userDropdownRef}>
             <FaUser onClick={toggleUserDropdown} className="text-gray-700 hover:text-purple-600 cursor-pointer transition" />

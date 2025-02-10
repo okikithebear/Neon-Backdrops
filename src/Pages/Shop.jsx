@@ -84,7 +84,7 @@ const Shop = () => {
                   <h2 className="font-bold text-gray-800 mb-3">
                     {product.name}
                   </h2>
-                  <p className="text-red-600 font-bold line-through">
+                  <p className="text-red-600 font-bold text-xl line-through">
                     ₦{formatCurrency(product.price)}
                   </p>
                   <p className="text-xl font-bold text-purple-600">

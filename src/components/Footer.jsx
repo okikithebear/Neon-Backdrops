@@ -47,11 +47,8 @@ const Footer = () => {
 
           {/* Social Media Links */}
           <div className="flex justify-center sm:justify-start space-x-4 mt-4">
-            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-yellow-600 transition text-lg">
+            <a href="https://www.instagram.com/neon_backdrops?igsh=ZnI3cmV4ZjZuNGU5" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-yellow-600 transition text-lg">
               <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-yellow-600 transition text-lg">
-              <i className="fab fa-twitter"></i>
             </a>
           </div>
         </div>
@@ -59,7 +56,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="mt-10 border-t border-gray-300 pt-6 text-center text-sm text-gray-500 font-mulish">
-        <p>© 2024 Neon Backdrops. All rights reserved.</p>
+        <p>© 2025 Neon Backdrops. All rights reserved.</p>
         
         {/* Footer Links and Social Icons */}
         <div className="flex justify-center font-mulish items-center space-x-4 mt-2">

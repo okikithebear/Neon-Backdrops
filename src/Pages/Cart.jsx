@@ -92,7 +92,7 @@ const CartPage = () => {
                                     className="mt-2 text-red-500 hover:text-red-600 transition"
                                     aria-label="Remove item"
                                 >
-                                    <FaTrash className="text-lg tex-red-400" />
+                                    <FaTrash className="text-xl text-red-400" />
                                 </button>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ const CartPage = () => {
         <div>
            
             <a
-    href="https://wa.me/23490567879"
+     href="https://wa.me/2347033718653"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 focus:ring-2 focus:ring-purple-400 focus:outline-none shadow-lg transition-transform transform hover:scale-105"

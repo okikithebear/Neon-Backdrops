@@ -17,7 +17,7 @@ import WorkGallery from './components/WorkGallery';
 import Backdrops from './Pages/Backdrops';
 import Rentals from './Pages/Rentals';
 import Purchase from './Pages/Purchase';
-import DigitalBackdrops from './Pages/DigitalBackdrops'; // Ensure file is correct
+// import DigitalBackdrops from './Pages/DigitalBackdrops'; // Ensure file is correct
 import Contact from './Pages/Contact';
 import DoubleSided from './Pages/DoubleSided';
 import About from './Pages/About.jsx';
@@ -71,7 +71,7 @@ function App() {
             <Route path="/backdrops" element={<Backdrops />} />
             <Route path="/rentals" element={<Rentals />} />
             <Route path="/purchase" element={<Purchase />} />
-            <Route path="/digital-backdrops" element={<DigitalBackdrops />} />
+            {/* <Route path="/digital-backdrops" element={<DigitalBackdrops />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/double-sided" element={<DoubleSided />} />
             <Route path="/about" element={<About />} />
