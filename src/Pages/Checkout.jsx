@@ -58,6 +58,7 @@ const sendConfirmationEmail = async (orderDetails) => {
 const CheckoutPage = () => {
   const { cart, calculateTotal, clearCart } = useContext(CartContext);
   const [userEmail, setUserEmail] = useState('');
+  const [userId, setUserId] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     address: '',
@@ -71,11 +72,13 @@ const CheckoutPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // Fetch user info on mount
   useEffect(() => {
     const auth = getAuth();
     const user = auth.currentUser;
     if (user) {
       setUserEmail(user.email);
+      setUserId(user.uid);
     } else {
       setUserEmail('user@example.com');
     }
@@ -100,7 +103,9 @@ const CheckoutPage = () => {
 
   const handleOrderSave = async () => {
     try {
+      // Include the userId in the order document
       await addDoc(collection(db, 'orders'), {
+        userId: userId,
         name: formData.name,
         email: userEmail,
         address: formData.address,
@@ -143,6 +148,7 @@ const CheckoutPage = () => {
         const orderDetails = {
           name: formData.name,
           email: userEmail,
+          userId: userId, // Include the user ID here
           cart: cart.map(item => ({
             id: item.id,
             name: item.name,

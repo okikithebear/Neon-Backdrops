@@ -45,7 +45,7 @@ const SEARCH_ROUTES = {
   backdrops: '/backdrops',
   rentals: '/rentals',
   purchase: '/purchase',
-  digital: '/digital-backdrops',
+  profile: '/account-details',
   contact: '/contact',
   about: '/about',
   journal: '/journal',
@@ -113,6 +113,7 @@ const handleSearchSubmit = (e) => {
      { name: 'Journal', path: '/journal' },
      { name: 'About', path: '/about' },
      { name: 'Contact', path: '/contact' },
+     { name: 'Profile', path: '/account-details' },
    ];
  
   // const mobileLinks = [...mainLinks, ...shopLinks];
@@ -249,6 +250,7 @@ const handleSearchSubmit = (e) => {
     { name: 'Backdrops', href: '/backdrops' },
     { name: 'Rentals', href: '/rentals' },
     { name: 'My Account', href: '/my-account' },
+    { name: 'Profile', path: '/account-details' },
   ].map((link) => (
     <a
       key={link.href}

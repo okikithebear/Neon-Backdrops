@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
+import { motion } from 'framer-motion';
 import 'jspdf-autotable';
 import { FaCheckCircle, FaDownload, FaArrowLeft } from 'react-icons/fa';
 
@@ -47,8 +48,9 @@ const OrderConfirmationPage = () => {
       if(item.type === 'rental' && item.rentalDates) {
         itemName += ` (Rental: ${item.rentalDates.start} - ${item.rentalDates.end}, ${item.rentalDuration} days)`;
       }
-      // For rentals, unit price is calculated based on rental duration
-      const unitPrice = item.type === 'rental' ? item.price * item.rentalDuration : item.discountedPrice;
+      // For rentals, unit price is calculated as price * rentalDuration,
+      // otherwise use discountedPrice
+      const unitPrice = item.type === 'rental' ? item.price * item.rentalDuration : item.price;
       const totalPrice = unitPrice * item.quantity;
       const row = [
         itemName,
@@ -72,17 +74,17 @@ const OrderConfirmationPage = () => {
     // Retrieve the final y-coordinate to place totals
     const finalY = doc.lastAutoTable.finalY || 65;
     doc.setFontSize(12);
-    doc.text(`Subtotal: ${formatCurrency(orderDetails.total)}`, 20, finalY + 10);
-    doc.text(`Shipping: ${formatCurrency(orderDetails.shippingCost)}`, 20, finalY + 18);
+    doc.text(`Grandtotal: ${formatCurrency(orderDetails.total)}`, 20, finalY + 10);
+   
     doc.setFont("helvetica", "bold");
-    doc.text(`Grand Total: ${formatCurrency(orderDetails.grandTotal)}`, 20, finalY + 26);
+    
 
     // FOOTER: Thank you note
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
     doc.text("Thank you for your business!", 105, 290, { align: "center" });
 
-    // Save the PDF
+    // Save PDF
     doc.save('Order_Invoice.pdf');
   };
 
@@ -111,13 +113,22 @@ const OrderConfirmationPage = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 mt-20 mb-20">
-      <div className="text-center">
-        <FaCheckCircle className="text-green-500 text-5xl mx-auto" />
-        <h1 className="text-3xl font-bold text-gray-800 mt-4">Thank You for Your Order!</h1>
-        <p className="text-gray-600 mt-4">
-          Your order has been successfully placed. A confirmation email has been sent to <strong>{orderDetails.email}</strong>.
-        </p>
-      </div>
+       <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="text-center p-8"
+    >
+      <FaCheckCircle className="text-green-500 text-6xl mx-auto" />
+      <h1 className="mt-4 text-3xl font-bold text-gray-800">
+        Thank You for Your Order!
+      </h1>
+      <p className="mt-4 text-lg text-gray-600">
+        Your order has been successfully placed. A confirmation email has been sent to <strong>{orderDetails.email}</strong>.
+        <br />
+        Please note that discounts have already been applied. We appreciate your business and look forward to welcoming you back!
+      </p>
+    </motion.div>
 
       <div className="bg-white shadow-md rounded-lg p-8 mt-10">
         <h2 className="text-xl font-semibold text-gray-700 mb-6 border-b pb-2">Order Summary</h2>
@@ -140,7 +151,7 @@ const OrderConfirmationPage = () => {
                 {formatCurrency(
                   item.type === "rental" 
                     ? (item.price * item.rentalDuration * item.quantity) 
-                    : (item.Price * item.quantity)
+                    : (item.price * item.quantity)
                 )}
               </p>
             </div>
@@ -148,7 +159,6 @@ const OrderConfirmationPage = () => {
         </div>
         <div className="mt-6 text-right border-t pt-4">
           <p className="text-gray-600"><strong>Subtotal:</strong> {formatCurrency(orderDetails.total)}</p>
-         
         </div>
       </div>
 

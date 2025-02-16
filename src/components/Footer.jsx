@@ -9,7 +9,7 @@ const Footer = () => {
           <ul className="space-y-3 text-gray-700">
             <li><a href="/backdrops" className="hover:text-yellow-500 transition">Backdrops</a></li>
             <li><a href="/rentals" className="hover:text-yellow-500 transition">Rentals</a></li>
-            <li><a href="/backdrops" className="hover:text-yellow-500 transition">Digital Backdrops</a></li>
+            {/* <li><a href="/backdrops" className="hover:text-yellow-500 transition">Digital Backdrops</a></li> */}
           </ul>
         </div>
 
