@@ -36,6 +36,8 @@ import Customize from './components/Customize.jsx';
 import PromoPopup from './components/PromoPopup.jsx';
 import PriceListSection from './components/PriceListSection.jsx';
 import TestimonialCarousel from './components/TestimonialCarousel.jsx';
+import AccountDetails from './Pages/AccountDetails.jsx';
+import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
 
 // Custom component to handle scrolling to top on route change
 function ScrollToTop() {
@@ -74,6 +76,7 @@ function App() {
             {/* <Route path="/digital-backdrops" element={<DigitalBackdrops />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/double-sided" element={<DoubleSided />} />
+            <Route path="/account-details" element={<AccountDetails/>} />
             <Route path="/about" element={<About />} />
             <Route path="/journal" element={<Journal />} />
             <Route path="/shop" element={<ShopPage />} />
@@ -85,6 +88,7 @@ function App() {
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/Faq" element={<FAQ />} />
             <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy/>} />            
 
           </Routes>
           <Footer />

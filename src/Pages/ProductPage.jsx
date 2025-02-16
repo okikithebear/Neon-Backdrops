@@ -128,31 +128,34 @@ const ProductPage = () => {
     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  // Handle Add to Cart action; for rentals, ensure dates are selected
-  const handleAddToCart = () => {
-    if (product.type === "Rental" && (!startDate || !endDate)) {
-      setShowWarning(true);
-      return;
-    } else {
-      setShowWarning(false);
-    }
+ // Handle Add to Cart action; for rentals, ensure dates are selected
+ const handleAddToCart = () => {
+  // Normalize product type to lowercase
+  const normalizedType = product.type.toLowerCase();
 
-    const rentalDuration = calculateRentalDuration();
-    const rentalPrice =
-      product.type === "Rental" ? rentalDuration * product.price * quantity : null;
+  if (normalizedType === "rental" && (!startDate || !endDate)) {
+    setShowWarning(true);
+    return;
+  } else {
+    setShowWarning(false);
+  }
 
-    // Build product details object (including rental details if applicable)
-    const productDetails = {
-      ...product,
-      quantity: parseInt(quantity),
-      startDate: product.type === "Rental" ? startDate : null,
-      endDate: product.type === "Rental" ? endDate : null,
-      rentalPrice: rentalPrice,
-    };
-
-    addToCart(productDetails);
-    navigate("/cart");
+  const rentalDuration = calculateRentalDuration();
+  
+  // Build product details object with encapsulated rentalDates
+  const productDetails = {
+    ...product,
+    type: normalizedType, // normalized to lowercase
+    quantity: parseInt(quantity),
+    rentalDates: normalizedType === "rental" ? { start: startDate, end: endDate } : null,
+    rentalDuration: normalizedType === "rental" ? rentalDuration : null,
+    // Optionally, calculate rentalPrice on the fly if needed
+    rentalPrice: normalizedType === "rental" ? rentalDuration * product.price * quantity : null,
   };
+
+  addToCart(productDetails);
+  navigate("/cart");
+};
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-8 mt-20">

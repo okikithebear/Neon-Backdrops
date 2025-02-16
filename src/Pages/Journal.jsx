@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Importing images
-import Elegance from '../Assets/Gallery/Jornal1.JPG';
-import Tradition from '../Assets/Gallery/Journal2.JPG';
-import Vintage from '../Assets/Gallery/Journal3.JPG';
+import Elegance from '../Assets/Gallery/elegance.JPG';
+import Perfection from '../Assets/Gallery/Perfection.JPG';
+import Beauty  from '../Assets/Gallery/Beauty.JPG';
 
 // Array of articles with images and descriptions
 const articles = [
@@ -14,14 +14,14 @@ const articles = [
     image: Elegance,
   },
   {
-    title: "Tradition is everything",
+    title: "Perfection is everything",
     content: "Add an edgy, city feel to your photoshoots.",
-    image: Tradition
+    image: Perfection,
   },
   {
     title: "Vintage Charm",
     content: "Timeless elegance for classic portrait photography.",
-    image: Vintage,
+    image: Beauty,
   },
 ];
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Lock, User, ArrowRight, Twitter, Instagram, Eye, EyeOff } from 'lucide-react'; // Add Eye and EyeOff icons
+import { Mail, Lock, User, ArrowRight,  Eye, EyeOff } from 'lucide-react'; // Add Eye and EyeOff icons
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { auth } from '../firebaseConfig'; // Adjust the path if necessary
@@ -52,7 +52,7 @@ const MyAccount = () => {
         await signInWithEmailAndPassword(auth, values.email, values.password);
         toast.success('Login successful! Redirecting...');
         setTimeout(() => {
-            navigate('/');
+            navigate('/account-details');
         }, 2000);
     } catch (err) {
         toast.error(`Invalid check login details!`);
@@ -196,12 +196,7 @@ const MyAccount = () => {
                     Forgot Password?
                   </button>
                   <div className="mt-6 flex justify-center space-x-4">
-                    <button className="p-2 bg-gray-200 rounded-full">
-                      <Instagram className="text-gray-700 hover:text-black" size={24} />
-                    </button>
-                    <button className="p-2 bg-gray-200 rounded-full">
-                      <Twitter className="text-gray-700 hover:text-black" size={24} />
-                    </button>
+                    
                   </div>
                 </div>
               )}

@@ -9,17 +9,23 @@ const CartPage = () => {
     const navigate = useNavigate();
 
     const handleCheckout = () => {
-        const rentalCartData = cart.map(item => ({
-            id: item.id,
-            rentalDates: item.rentalDates,
-            rentalDuration: item.rentalDuration,
-            name: item.name,
-            quantity: item.quantity,
-            price: item.price,
+        const checkoutCartData = cart.map(item => ({
+          id: item.id,
+          name: item.name,
+          image: item.image,
+          type: item.type, // includes "rental" or otherwise
+          quantity: item.quantity,
+          price: item.price,
+          discountedPrice: item.discountedPrice,
+          rentalDates: item.isRental ? item.rentalDates : null,
+          rentalDuration: item.isRental ? item.rentalDuration : null,
+          totalCost: item.isRental 
+            ? item.price * item.rentalDuration * item.quantity 
+            : item.discountedPrice * item.quantity,
         }));
-
-        navigate('/checkout', { state: { cart: rentalCartData } });
-    };
+        navigate('/checkout', { state: { cart: checkoutCartData } });
+      };
+      
 
     return (
         <div className="max-w-5xl mx-auto px-6 py-10">
@@ -85,7 +91,7 @@ const CartPage = () => {
                                 <p className="text-lg font-semibold text-gray-900">
                                     ₦{item.isRental 
                                         ? (item.price * item.rentalDuration).toLocaleString('en-NG')
-                                        : (item.price * item.quantity).toLocaleString('en-NG')}
+                                        : (item.discountedPrice  * item.quantity).toLocaleString('en-NG')}
                                 </p>
                                 <button
                                     onClick={() => removeFromCart(item.id)}

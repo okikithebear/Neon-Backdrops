@@ -28,7 +28,7 @@ const Footer = () => {
           <h3 className="text-yellow-600 text-xl font-mulish mb-4">Customer Service</h3>
           <ul className="space-y-3 text-gray-700">
             <li><a href="/Faq" className="hover:text-yellow-500 transition">Shipping & Returns</a></li>
-            <li><a href="/Faq" className="hover:text-yellow-500 transition">Privacy Policy</a></li>
+            <li><a href="/privacy-policy" className="hover:text-yellow-500 transition">Privacy Policy</a></li>
             <li><a href="/Faq" className="hover:text-yellow-500 transition">Terms & Conditions</a></li>
           </ul>
         </div>
@@ -60,7 +60,7 @@ const Footer = () => {
         
         {/* Footer Links and Social Icons */}
         <div className="flex justify-center font-mulish items-center space-x-4 mt-2">
-          <a href="/Faq" className="hover:text-yellow-600 transition">Privacy Policy</a>
+          <a href="/privacy-policy" className="hover:text-yellow-600 transition">Privacy Policy</a>
           <a href="/Faq" className="hover:text-yellow-600 transition">Terms of Service</a>
         </div>
       </div>

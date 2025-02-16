@@ -120,7 +120,7 @@ const handleSearchSubmit = (e) => {
     <header className="w-full bg-white shadow-md fixed top-0 z-50">
       <div className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
-        <div className="text-2xl font-body  text-yellow-500">
+        <div className="text-3xl font-accent text-yellow-500 tracking-wide mb-2">
           <a href="/">Neon Backdrops</a>
         </div>
 
