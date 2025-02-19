@@ -62,7 +62,7 @@ const Footer = () => {
         {/* Footer Links and Social Icons */}
         <div className="flex justify-center font-mulish items-center space-x-4 mt-2">
           <a href="/privacy-policy" className="hover:text-yellow-600 transition">Privacy Policy</a>
-          <a href="/Faq" className="hover:text-yellow-600 transition">Terms of Service</a>
+          <a href="/Faq" className="hover:text-yellow-600 transition">Terms & Conditions</a>
         </div>
       </div>
     </footer>
