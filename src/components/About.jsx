@@ -50,22 +50,23 @@ const AboutSection = () => {
         transition={{ duration: 1 }}
       >
         <div className="text-left text-white space-y-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-3xl md:text-4xl  uppercase font-mulish"
-          >
-           Crafted just for you with a decade of artistic passion and expertise.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-base md:text-lg font-mulish"
-          >
-            Our founder began painting his own backdrops to craft unique, signature photographs. Today, Neon Backdrops continues that passion, bringing one-of-a-kind creations to photographers and creators worldwide.
-          </motion.p>
+        <motion.h1
+  initial={{ opacity: 0, y: 50 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ delay: 0.2, duration: 0.8 }}
+  className="text-3xl md:text-4xl uppercase font-mulish"
+>
+  Custom Crafted Neon Backdrops: A Decade of Artistic Expertise
+</motion.h1>
+<motion.p
+  initial={{ opacity: 0, y: 50 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ delay: 0.4, duration: 0.8 }}
+  className="text-base md:text-lg font-mulish"
+>
+  Our founder began painting his own backdrops to create signature photographs that truly stand out. Today, Neon Backdrops leverages over ten years of creative passion to deliver unique, high-quality neon backdrops for photographers and visual artists worldwide.
+</motion.p>
+
           <button
       onClick={handleNavigation}
       className="bg-white text-black hover:bg-transparent hover:text-white border-2 hover:border-white py-2 px-4 mt-4 inline-block transition duration-300"

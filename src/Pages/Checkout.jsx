@@ -139,7 +139,7 @@ const CheckoutPage = () => {
       name: formData.name,
       phone: formData.phone,
     },
-    publicKey: 'pk_test_b4bac9b446ecea10d7db39285bfaba19c20f9a7d',
+    publicKey: 'pk_live_2848a5968ca34955fc5085b263a8d970730df23c',
     text: 'Complete Purchase',
     onSuccess: async () => {
       if (isFormValid) {

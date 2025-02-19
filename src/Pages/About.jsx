@@ -48,11 +48,11 @@ const About = () => {
               About Me
             </h2>
             <p className='text-gray-600 mb-8 px-4 md:px-0 leading-relaxed'>
-              Hi, I’m <b>Toyese</b>, a passionate photographer specializing in creating stunning backdrops that transform every shot. With years of experience in the art of photography and design, I craft custom backdrops that elevate your photos, whether it’s for a photoshoot, event, or personal project.
-              <br />
-              <br />
-              My mission is to bring your vision to life, creating a backdrop that perfectly complements the mood and essence of your moments. Each project is a unique opportunity to collaborate and turn your ideas into visual masterpieces. I can't wait to work together and capture the beauty in every frame.
-            </p>
+  Hi, I’m <strong>Toyese</strong>, a passionate photographer and custom backdrop designer dedicated to transforming every shot with stunning, tailor-made photography backdrops. With years of professional experience in photography and design, I create high-quality, custom backdrops that elevate your images for photoshoots, events, and personal projects.
+  <br /><br />
+  My mission is to bring your vision to life with innovative, handcrafted backdrop solutions that perfectly complement the mood and essence of your moments. Each project is a unique opportunity to collaborate and turn your ideas into visual masterpieces. Explore my portfolio to see how my custom neon and photography backdrops can capture the beauty in every frame.
+</p>
+
           </motion.div>
         </div>
       </div>

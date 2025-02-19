@@ -41,8 +41,9 @@ const Footer = () => {
               Neon Backdrops
             </h2>
             <p className="text-gray-600 text-sm font-light max-w-xs mx-auto sm:mx-0">
-              Bringing your visions to life with hand-crafted backdrops. Each piece is uniquely designed, blending art with over a decade of photography expertise.
-            </p>
+  Elevate your photography with our custom neon backdrops handcrafted to perfection. Each unique backdrop is designed by industry experts, blending innovative art with over a decade of professional photography experience to transform your visual storytelling.
+</p>
+
           </div>
 
           {/* Social Media Links */}
