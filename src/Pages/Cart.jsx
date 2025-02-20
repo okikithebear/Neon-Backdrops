@@ -55,7 +55,7 @@ const CartPage = () => {
                             <div className="flex-grow">
                                 <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
                                 <div className="mt-1">
-                                    <p className="text-gray-600">
+                                    <div className="text-gray-600">
                                         {item.isRental ? (
                                             <>
                                                 <span className="font-medium">Rental Duration:</span> {item.rentalDuration} days
@@ -84,7 +84,7 @@ const CartPage = () => {
                                                 </div>
                                             </>
                                         )}
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="text-right">

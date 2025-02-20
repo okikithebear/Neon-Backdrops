@@ -28,7 +28,7 @@ const PromoPopup = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={handleClose} // Clicking outside closes the modal
-          aria-hidden="true"
+          // Removed aria-hidden="true" from here
         >
           <motion.div
             className="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 text-white p-8 rounded-xl shadow-2xl max-w-md mx-4 text-center"
