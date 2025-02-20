@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Rive from '@rive-app/react-canvas';
 
 const PriceListSection = () => {
   return (
@@ -75,18 +74,24 @@ const PriceListSection = () => {
 
         <div className="border-t border-yellow-500 my-4"></div>
 
-        {/* Rive Animation */}
+        {/* Framer Motion Animation Loader */}
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8 }}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{
+            scale: [0.5, 1.2, 1],
+            opacity: [0, 1],
+            rotate: [0, 360],
+          }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="mt-8"
-        >
-          <Rive
-            src="https://cdn.rive.app/animations/loader.riv"
-            style={{ width: 150, height: 150, margin: "0 auto" }}
-          />
-        </motion.div>
+          style={{
+            width: 150,
+            height: 150,
+            margin: "0 auto",
+            borderRadius: "50%",
+            backgroundColor: "#FBBF24",
+          }}
+        />
       </div>
     </section>
   );
