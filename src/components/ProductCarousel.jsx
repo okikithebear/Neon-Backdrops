@@ -23,7 +23,8 @@ const formatCurrency = (amount) => {
 
 const ProductCarousel = () => {
   const navigate = useNavigate();
-  const shuffledProducts = shuffleArray(products); // Shuffle products before rendering
+  const shuffledProducts = shuffleArray(products.filter(product => product.type.toLowerCase() === "backdrop"));
+
 
 
 
