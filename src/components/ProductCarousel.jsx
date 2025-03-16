@@ -8,13 +8,24 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 // Import products data from data.js
 import { products } from '../Assets/Product image/data';
 
+// Function to shuffle an array (Fisher-Yates algorithm)
+const shuffleArray = (array) => {
+  return array
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
+};
+
 // Function to format currency with Naira symbol and commas
 const formatCurrency = (amount) => {
   return `₦${Number(amount).toLocaleString()}`;
 };
 
 const ProductCarousel = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
+  const shuffledProducts = shuffleArray(products); // Shuffle products before rendering
+
+
 
   // Function to handle product click
   const handleProductClick = (productId) => {
@@ -76,7 +87,7 @@ const ProductCarousel = () => {
           }}
           className="product-carousel"
         >
-          {products.map((product) => {
+            {shuffledProducts.map((product) => {
             // Determine if the product is a backdrop
             const isBackdrop =
               product.type.toLowerCase() === "backdrop";

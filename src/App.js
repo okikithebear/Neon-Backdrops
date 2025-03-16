@@ -41,18 +41,20 @@ import PrivacyPolicy from './Pages/PrivacyPolicy.jsx';
 
 // Custom component to handle scrolling to top on route change
 function ScrollToTop() {
-  const location = useLocation();
+  const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+  }, [pathname]); // Only run when pathname changes
 
   return null;
 }
 
+
 function App() {
   return (
-    <CartProvider>
+   
       <Router>
+         <CartProvider>
         <div className="App">
           <Header />
           <ScrollToTop /> {/* Scroll to top when route changes */}
@@ -93,8 +95,9 @@ function App() {
           </Routes>
           <Footer />
         </div>
+        </CartProvider>
       </Router>
-    </CartProvider>
+   
   );
 }
 
