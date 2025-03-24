@@ -71,9 +71,9 @@ const Backdrop = () => {
       {/* Product Grid with Responsive Layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {currentProducts.map((product) => {
-          // Calculate the discounted price (for example, a 10% discount)
-          const discount = 0.1; // 10% discount
-          const discountedPrice = product.price - product.price * discount;
+          // // Calculate the discounted price (for example, a 10% discount)
+          // const discount = 0.1; // 10% discount
+          // const discountedPrice = product.price - product.price * discount;
 
           return (
             <Link to={`/product/${product.id}`} key={product.id}>  
@@ -85,14 +85,14 @@ const Backdrop = () => {
                 />
                 <h2 className="text-black mb-3">{product.name}</h2>
                 <p className="text-gray-600 mb-2">{product.type}</p>
-                <p className="text-xl font-bold text-red-500 line-through">
+                <p className="text-xl font-bold text-purple-500">
                   {formatCurrency(product.price)}
                 </p>
 
-                {/* Discounted Price */}
+                {/* Discounted Price
                 <p className="text-xl font-bold text-purple-600">
                   {formatCurrency(discountedPrice)}
-                </p>
+                </p> */}
                 <button
                   className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
                     product.inStock

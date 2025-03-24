@@ -79,7 +79,7 @@ const Rental = () => {
               />
               <h2 className="text-black mb-3">{product.name}</h2>
               <p className="text-gray-600 mb-2">{product.type}</p>
-              <p className="text-gray-600 font-bold">
+              <p className="text-xl font-bold text-purple-500">
                 ₦{formatCurrency(product.price)}
               </p>
               <button

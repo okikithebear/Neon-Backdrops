@@ -2,10 +2,8 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation, Autoplay } from 'swiper/modules'; // Import Autoplay for auto-sliding
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-
-// Import products data from data.js
+import { Navigation, Autoplay } from 'swiper/modules'; 
+import { useNavigate } from 'react-router-dom';
 import { products } from '../Assets/Product image/data';
 
 // Function to shuffle an array (Fisher-Yates algorithm)
@@ -25,12 +23,9 @@ const ProductCarousel = () => {
   const navigate = useNavigate();
   const shuffledProducts = shuffleArray(products.filter(product => product.type.toLowerCase() === "backdrop"));
 
-
-
-
   // Function to handle product click
   const handleProductClick = (productId) => {
-    navigate(`/product/${productId}`); // Navigate to product detail page
+    navigate(`/product/${productId}`);
   };
 
   return (
@@ -63,12 +58,12 @@ const ProductCarousel = () => {
         </div>
 
         <Swiper
-          modules={[Navigation, Autoplay]} // Added Autoplay module
+          modules={[Navigation, Autoplay]}
           navigation={{
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
           }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto-slide every 3 seconds
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           spaceBetween={30}
           slidesPerView={3}
           loop={true}
@@ -88,62 +83,35 @@ const ProductCarousel = () => {
           }}
           className="product-carousel"
         >
-            {shuffledProducts.map((product) => {
-            // Determine if the product is a backdrop
-            const isBackdrop =
-              product.type.toLowerCase() === "backdrop";
-            // Calculate discounted price only for backdrops
-            const discountedPrice = isBackdrop
-              ? product.price * 0.90
-              : product.price;
+          {shuffledProducts.map((product) => (
+            <SwiperSlide key={product.id} className="group relative">
+              <div
+                className="relative w-full bg-white cursor-pointer overflow-hidden rounded-lg"
+                onClick={() => handleProductClick(product.id)}
+              >
+                <div className="relative w-full h-[500px] sm:h-[350px] lg:h-[400px]">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover rounded-t-lg"
+                  />
+                </div>
 
-            return (
-              <SwiperSlide key={product.id} className="group relative">
-                <div
-                  className="relative w-full bg-white cursor-pointer overflow-hidden rounded-lg"
-                  onClick={() => handleProductClick(product.id)}
-                >
-                  <div className="relative w-full h-[500px] sm:h-[350px] lg:h-[400px]">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full h-full object-cover rounded-t-lg"
-                    />
-                    {/* Discount badge for backdrop products */}
-                    {isBackdrop && (
-                      <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                        10% OFF
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Product Info */}
-                  <div className="p-4 text-start bg-gray-200 rounded-b-lg shadow-md">
-                    <p className="text-lg font-semibold text-gray-800">{product.title}</p>
-                    <p className="text-base text-purple-600 mt-1">{product.type}</p>
-                    <p className="text-base text-black mt-1">{product.name}</p>
-                    <div className="mt-2">
-                      {isBackdrop ? (
-                        <>
-                          <p className="text-xl font-bold text-red-500 line-through">
-                            {formatCurrency(product.price)}
-                          </p>
-                          <p className="text-xl font-bold text-purple-600">
-                            {formatCurrency(discountedPrice)}
-                          </p>
-                        </>
-                      ) : (
-                        <p className="text-xl font-bold text-purple-600">
-                          {formatCurrency(product.price)}
-                        </p>
-                      )}
-                    </div>
+                {/* Product Info */}
+                <div className="p-4 text-start bg-gray-200 rounded-b-lg shadow-md">
+                  <p className="text-lg font-semibold text-gray-800">{product.title}</p>
+                  <p className="text-base text-purple-600 mt-1">{product.type}</p>
+                  <p className="text-base text-black mt-1">{product.name}</p>
+                  <div className="mt-2">
+                    <p className="text-xl font-bold text-purple-600">
+                      {formatCurrency(product.price)}
+                    </p>
                   </div>
                 </div>
-                <div className="mt-4"></div>
-              </SwiperSlide>
-            );
-          })}
+              </div>
+              <div className="mt-4"></div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>

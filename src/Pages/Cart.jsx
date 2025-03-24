@@ -91,7 +91,7 @@ const CartPage = () => {
                                 <p className="text-lg font-semibold text-gray-900">
                                     ₦{item.isRental 
                                         ? (item.price * item.rentalDuration).toLocaleString('en-NG')
-                                        : (item.discountedPrice  * item.quantity).toLocaleString('en-NG')}
+                                        : (item.price  * item.quantity).toLocaleString('en-NG')}
                                 </p>
                                 <button
                                     onClick={() => removeFromCart(item.id)}

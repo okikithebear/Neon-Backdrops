@@ -125,8 +125,8 @@ const OrderConfirmationPage = () => {
       </h1>
       <p className="mt-4 text-lg text-gray-600">
         Your order has been successfully placed. A confirmation email has been sent to <strong>{orderDetails.email}</strong>.
-        <br />
-        Please note that discounts have already been applied. We appreciate your business and look forward to welcoming you back!
+        {/* <br />
+        Please note that discounts have already been applied. We appreciate your business and look forward to welcoming you back! */}
       </p>
     </motion.div>
 

@@ -87,7 +87,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90, // Discounted price (10% off)
+         // Discounted price (10% off)
         color: "Patchment brown",
         size: "Large",
         texture: "Solid",
@@ -107,7 +107,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Cream",
         size: "Medium",
         texture: "Solid",
@@ -122,7 +122,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -137,7 +137,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Dirt brown",
         size: "Small",
         texture: "Solid",
@@ -152,7 +152,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Dirt brown",
         size: "Medium",
         texture: "Solid",
@@ -167,7 +167,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Cream",
         size: "Large",
         texture: "Solid",
@@ -182,7 +182,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Dark blue",
         size: "Large",
         texture: "Solid",
@@ -197,7 +197,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Black",
         size: "Small",
         texture: "Mid",
@@ -212,7 +212,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Brown",
         size: "Medium",
         texture: "Solid",
@@ -227,7 +227,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Light cream",
         size: "Large",
         texture: "Solid",
@@ -243,7 +243,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Light brown",
         size: "Medium",
         texture: "Solid",
@@ -258,7 +258,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Dark blue",
         size: "Small",
         texture: "Solid",
@@ -273,7 +273,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Brown",
         size: "Large",
         texture: "Solid",
@@ -288,7 +288,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Cream",
         size: "Medium",
         texture: "Solid",
@@ -303,7 +303,7 @@ export const products = [
         category: "Rental",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Amber green",
         size: "Small",
         texture: "Solid",
@@ -318,7 +318,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Yellowish red",
         size: "Large",
         texture: "Solid",
@@ -333,7 +333,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000 ,
-        discountedPrice: 150000 * 0.90,
+        
         color: "Yellowish brown",
         size: "Medium",
         texture: "Solid",
@@ -348,7 +348,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -365,7 +365,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -382,7 +382,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -399,7 +399,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -416,7 +416,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -433,7 +433,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -450,7 +450,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -467,7 +467,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -484,7 +484,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -501,7 +501,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -518,7 +518,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -535,7 +535,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -552,7 +552,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",
@@ -569,7 +569,7 @@ export const products = [
         category: "Backdrop",
         type: "Backdrop",
         price: 150000,
-        discountedPrice: 135000,
+        
         color: "Yellow",
         size: "Large",
         texture: "Solid",

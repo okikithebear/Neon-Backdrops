@@ -232,8 +232,8 @@ const CheckoutPage = () => {
               </div>
             ))}
             <div className="mt-6 space-y-4">
-              <h2 className="text-xl font-mulish text-gray-700">Total:</h2>
-              <p className="text-xl font-mulish text-gray-800">{formatCurrency(calculateTotal())}</p>
+              <h2 className="text-xl font-mulish text-gray-700">Total: {formatCurrency(calculateTotal())}</h2>
+              <p className="text-xl font-mulish text-green-500">{formatCurrency(calculateTotal())}</p>
             </div>
           </div>
           <div className="bg-gray-50 shadow-lg rounded-lg p-6">

@@ -77,30 +77,26 @@ useEffect(() => {
     const end = new Date(endDate);
     return Math.floor((end - start) / (1000 * 3600 * 24)) + 1;
   };
-
   const addToCart = async (product) => {
     const currentUserId = user ? user.uid : guestId;
-    // Destructure rentalDates as an object along with other fields
     let { id, type, rentalDates, price, rentalDuration, quantity } = product;
     id = normalizeId(id);
-    type = type.toLowerCase(); // ensure type is normalized
+    type = type.toLowerCase();
     quantity = quantity || 1;
-    
+  
     if (type === "rental") {
-      // Extract start and end dates from the rentalDates object
       const startDate = rentalDates ? rentalDates.start : null;
       const endDate = rentalDates ? rentalDates.end : null;
-      
-      // Validate rental dates
+  
       if (!startDate || !endDate) {
         console.error("Start Date and End Date are required for rentals");
         return;
       }
-      // Calculate rentalDuration if not provided
+  
       if (!rentalDuration) {
         rentalDuration = calculateRentalDuration(startDate, endDate);
       }
-      // Check if an item with the same rental period already exists
+  
       const existingItem = cart.find(
         (item) =>
           item.id === id &&
@@ -109,11 +105,12 @@ useEffect(() => {
           item.rentalDates.start === startDate &&
           item.rentalDates.end === endDate
       );
+  
       if (existingItem) {
         console.log("Rental item with the same dates already exists in the cart.");
         return;
       }
-      // Save rental product with details
+  
       const itemRef = doc(db, "carts", currentUserId, "items", id);
       await setDoc(
         itemRef,
@@ -121,22 +118,22 @@ useEffect(() => {
           ...product,
           rentalDates: { start: startDate, end: endDate },
           rentalDuration,
-          totalCost: price * rentalDuration * quantity, // cost based on duration and quantity
+          totalCost: price * rentalDuration * quantity, // Removed discount calculations
           isRental: true,
           quantity,
         },
         { merge: true }
       );
     } else {
-      // For non-rental items
       const itemRef = doc(db, "carts", currentUserId, "items", id);
       const existingItem = cart.find((item) => item.id === id);
+  
       if (existingItem) {
         await setDoc(
           itemRef,
           {
             quantity: existingItem.quantity + quantity,
-            totalCost: price * (existingItem.quantity + quantity),
+            totalCost: price * (existingItem.quantity + quantity), // Removed discountedPrice
           },
           { merge: true }
         );
@@ -146,13 +143,14 @@ useEffect(() => {
           {
             ...product,
             quantity,
-            totalCost: price * quantity,
+            totalCost: price * quantity, // Removed discountedPrice
           },
           { merge: true }
         );
       }
     }
   };
+  
 
   // Remove item from cart
   const removeFromCart = async (id) => {
@@ -188,7 +186,6 @@ useEffect(() => {
     await setDoc(itemRef, { quantity }, { merge: true });
   };
 
-  // Calculate total cost of cart items
   const calculateTotal = () => {
     const itemsTotal = cart.reduce((total, item) => {
       if (item.type === 'rental') {
@@ -196,10 +193,11 @@ useEffect(() => {
         const duration = item.rentalDuration || calculateRentalDuration(item.startDate, item.endDate);
         return total + item.price * duration * (item.quantity || 1);
       }
-      return total + item.discountedPrice  * (item.quantity || 1);
+      return total + item.price * (item.quantity || 1); // Removed discountedPrice
     }, 0);
     return itemsTotal;
   };
+  
 
   const updateShippingCost = (cost) => {
     setShippingCost(cost);

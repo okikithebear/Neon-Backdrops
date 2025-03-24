@@ -189,7 +189,7 @@ const ProductPage = () => {
           </div>
 
           {/* Price */}
-          <p className="text-2xl font-bold text-red-600">
+          <p className="text-2xl font-bold text-green-600">
             ₦{formatCurrency(product.discountedPrice || product.price)}
           </p>
 
