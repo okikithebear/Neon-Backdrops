@@ -68,59 +68,33 @@ const Shop = () => {
 
         {/* Product Grid with Responsive Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentProducts.map((product) => {
-            // Determine if the product is a backdrop
-            const isBackdrop =
-              product.type.toLowerCase() === "backdrop";
-            // Calculate discounted price only for backdrops
-            const discountedPrice = isBackdrop
-              ? product.price * 0.9
-              : product.price;
-
-            return (
-              <Link to={`/product/${product.id}`} key={product.id}>
-                <div className="relative border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-                  {isBackdrop && (
-                    <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                      10% OFF
-                    </div>
-                  )}
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-[500px] sm:h-[350px] lg:h-[400px] object-cover mb-4"
-                  />
-                  <h1 className="text-purple-600 mb-2">{product.type}</h1>
-                  <h2 className="font-bold text-gray-800 mb-3">{product.name}</h2>
-                  {isBackdrop ? (
-                    <>
-                      <p className="text-red-600 font-bold text-xl line-through">
-                        ₦{formatCurrency(product.price)}
-                      </p>
-                      <p className="text-xl font-bold text-purple-600">
-                        ₦{formatCurrency(discountedPrice)}
-                      </p>
-                    </>
-                  ) : (
-                    <p className="text-xl font-bold text-purple-600">
-                      ₦{formatCurrency(product.price)}
-                    </p>
-                  )}
-                  <button
-                    className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
-                      product.inStock
-                        ? "bg-purple-500 hover:bg-purple-600"
-                        : "bg-gray-300 cursor-not-allowed"
-                    }`}
-                    disabled={!product.inStock}
-                  >
-                    <AiOutlineShoppingCart className="mr-2" />
-                    {product.inStock ? "Add to Cart" : "Out of Stock"}
-                  </button>
-                </div>
-              </Link>
-            );
-          })}
+          {currentProducts.map((product) => (
+            <Link to={`/product/${product.id}`} key={product.id}>
+              <div className="relative border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-[500px] sm:h-[350px] lg:h-[400px] object-cover mb-4"
+                />
+                <h1 className="text-purple-600 mb-2">{product.type}</h1>
+                <h2 className="font-bold text-gray-800 mb-3">{product.name}</h2>
+                <p className="text-xl font-bold text-purple-600">
+                  ₦{formatCurrency(product.price)}
+                </p>
+                <button
+                  className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
+                    product.inStock
+                      ? "bg-purple-500 hover:bg-purple-600"
+                      : "bg-gray-300 cursor-not-allowed"
+                  }`}
+                  disabled={!product.inStock}
+                >
+                  <AiOutlineShoppingCart className="mr-2" />
+                  {product.inStock ? "Add to Cart" : "Out of Stock"}
+                </button>
+              </div>
+            </Link>
+          ))}
         </div>
 
         {/* Pagination Component */}

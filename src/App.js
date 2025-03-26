@@ -33,7 +33,7 @@ import CheckoutPage from './Pages/Checkout';
 import FAQ from './Pages/Faq.jsx';
 import OrderConfirmationPage from './components/OrderConfirmationPage.jsx';
 import Customize from './components/Customize.jsx';
-import PromoPopup from './components/PromoPopup.jsx';
+// import PromoPopup from './components/PromoPopup.jsx';
 import PriceListSection from './components/PriceListSection.jsx';
 import TestimonialCarousel from './components/TestimonialCarousel.jsx';
 import AccountDetails from './Pages/AccountDetails.jsx';
@@ -61,7 +61,7 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
-               <PromoPopup/>
+               {/* <PromoPopup/> */}
                 <Hero />
                 <ProductCarousel />
                 <Gallery />
