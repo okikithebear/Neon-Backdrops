@@ -86,7 +86,7 @@ export const products = [
         name: "Rodeo Dust Painted Canvas Backdrop (SN#100)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
          // Discounted price (10% off)
         color: "Patchment brown",
         size: "Large",
@@ -106,7 +106,7 @@ export const products = [
         name: "Clay Light Painted Canvas Backdrop (SN#102)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Cream",
         size: "Medium",
@@ -121,7 +121,7 @@ export const products = [
         name: "Yellow Cat Painted Canvas Backdrop (SN#103)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Yellow",
         size: "Large",
@@ -136,7 +136,7 @@ export const products = [
         name: "Blush Gray Painted Canvas Backdrop (SN#104)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Dirt brown",
         size: "Small",
@@ -151,7 +151,7 @@ export const products = [
         name: "Cedar Stone Painted Canvas Backdrop (SN#105)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Dirt brown",
         size: "Medium",
@@ -166,7 +166,7 @@ export const products = [
         name: "Golden Hour Painted Canvas Backdrop (SN#106)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Cream",
         size: "Large",
@@ -181,7 +181,7 @@ export const products = [
         name: "Sunset Sky Painted Canvas Backdrop (SN#107)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Dark blue",
         size: "Large",
@@ -196,7 +196,7 @@ export const products = [
         name: "Foggy Morning Painted Canvas Backdrop (SN#108)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Black",
         size: "Small",
@@ -211,7 +211,7 @@ export const products = [
         name: "Dusty Rose Painted Canvas Backdrop (SN#109)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Brown",
         size: "Medium",
@@ -226,7 +226,7 @@ export const products = [
         name: "Rustic Charm Painted Canvas Backdrop (SN#110)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Light cream",
         size: "Large",
@@ -242,7 +242,7 @@ export const products = [
         name: "Olive brown Painted Canvas Backdrop (SN#111)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Light brown",
         size: "Medium",
@@ -257,7 +257,7 @@ export const products = [
         name: "Twilight Mist Painted Canvas Backdrop (SN#112)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Dark blue",
         size: "Small",
@@ -272,7 +272,7 @@ export const products = [
         name: "Midnight brown Painted Canvas Backdrop (SN#113)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Brown",
         size: "Large",
@@ -287,7 +287,7 @@ export const products = [
         name: "Silver Lining Painted Canvas Backdrop (SN#114)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Cream",
         size: "Medium",
@@ -302,7 +302,7 @@ export const products = [
         name: "Warm Amber Painted Canvas Backdrop (SN#115)",
         category: "Rental",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Amber green",
         size: "Small",
@@ -317,7 +317,7 @@ export const products = [
         name: "Sun Depths Painted Canvas Backdrop (SN#116)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Yellowish red",
         size: "Large",
@@ -332,7 +332,7 @@ export const products = [
         name: "Pine Forest Painted Canvas Backdrop (SN#117)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000 ,
+        price: 175000 ,
         
         color: "Yellowish brown",
         size: "Medium",
@@ -347,7 +347,7 @@ export const products = [
         name: "Yellow Fields Painted Canvas Backdrop (SN#118)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -364,7 +364,7 @@ export const products = [
         name: "Almond Cloud Patches Painted Canvas Backdrop (SN#119)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -381,7 +381,7 @@ export const products = [
         name: "Creamy Dreamy Painted Canvas Backdrop (SN#120)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -398,7 +398,7 @@ export const products = [
         name: "Crush Cramsicle Painted Canvas Backdrop (SN#121)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -415,7 +415,7 @@ export const products = [
         name: "Drak Magic Hour Painted Canvas Backdrop (SN#122)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -432,7 +432,7 @@ export const products = [
         name: "Secret Garden Painted Canvas Backdrop (SN#123)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -449,7 +449,7 @@ export const products = [
         name: "Polka Dot Paradise Painted Canvas Backdrop (SN#124)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -466,7 +466,7 @@ export const products = [
         name: "Sunflower Field Painted Canvas Backdrop (SN#125)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -483,7 +483,7 @@ export const products = [
         name: "Sandy Toes Painted Canvas Backdrop (SN#126)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -500,7 +500,7 @@ export const products = [
         name: "Mocha Magic Painted Canvas Backdrop (SN#127)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -517,7 +517,7 @@ export const products = [
         name: "Blue Sea Painted Canvas Backdrop (SN#128)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -534,7 +534,7 @@ export const products = [
         name: "Sunset Painted Canvas Backdrop (SN#129)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -551,7 +551,7 @@ export const products = [
         name: "Tipsy Tea Painted Canvas Backdrop (SN#130)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
@@ -568,7 +568,7 @@ export const products = [
         name: "Clay Stone Cliff Painted Canvas Backdrop (SN#131)",
         category: "Backdrop",
         type: "Backdrop",
-        price: 150000,
+        price: 175000,
         
         color: "Yellow",
         size: "Large",
