@@ -19,10 +19,10 @@ const ProductPage = () => {
   // Find the product based on the id parameter
    const product = products.find((p) => p.id === parseInt(id));
   // default to the first variant
-  const [selectedVariant, setSelectedVariant] = useState()
+  const [selectedVariant, setSelectedVariant] = useState(
     product?.variants?.[0] ?? { size: product.size, price: product.price }
   );
- 
+
 
   // const [selectedSize, setSelectedSize] = useState(null);
 
