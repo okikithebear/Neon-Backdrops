@@ -99,7 +99,31 @@ export const products = [
         ],
         inStock: true,
         description: "Experience the beauty of the Rodeo Dust backdrop with its unique textures and rich blue tones. Perfect for any themed photoshoot or event.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 2,
@@ -114,7 +138,31 @@ export const products = [
         image: product2,
         inStock: true,
         description: "The Clay Light backdrop features soft hues that complement any scene. Ideal for portrait photography and artistic displays.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 3,
@@ -129,7 +177,31 @@ export const products = [
         image: product3,
         inStock: true,
         description: "Bring a touch of mystery with the White Cat backdrop. Its deep blue tones create an enchanting atmosphere for any shoot.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 4,
@@ -144,7 +216,31 @@ export const products = [
         image: product4,
         inStock: true,
         description: "The Blush Gray backdrop offers a gentle gradient effect, perfect for romantic and soft photography styles.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 5,
@@ -159,7 +255,31 @@ export const products = [
         image: product5,
         inStock: true,
         description: "Capture nature's beauty with the Cedar Stone backdrop. Its grainy texture enhances outdoor-themed photos.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 6,
@@ -174,7 +294,31 @@ export const products = [
         image: product6,
         inStock: true,
         description: "The Golden Hour backdrop radiates warmth and light, perfect for enhancing your portraits and event photography.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 7,
@@ -189,7 +333,31 @@ export const products = [
         image: product7,
         inStock: true,
         description: "The Sunset Sky backdrop features vibrant swirls of red, creating a dynamic background for your creative projects.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 8,
@@ -204,7 +372,31 @@ export const products = [
         image: product8,
         inStock: true,
         description: "Set the mood with the Foggy Morning backdrop, providing a soft, dreamy quality to your images.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 9,
@@ -219,7 +411,31 @@ export const products = [
         image: product9,
         inStock: true,
         description: "The Dusty Rose backdrop exudes elegance and softness, perfect for weddings and fashion photography.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 10,
@@ -234,7 +450,31 @@ export const products = [
         image: product10,
         inStock: true,
         description: "Bring a rustic feel to your photos with the Rustic Charm backdrop, featuring strong textures and warm colors.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     // Add more products as needed...
     {
@@ -250,7 +490,31 @@ export const products = [
         image: product11,
         inStock: true,
         description: "This Olive Green backdrop is perfect for creating a calm and serene atmosphere for your photography sessions.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 12,
@@ -265,7 +529,30 @@ export const products = [
         image: product12,
         inStock: true,
         description: "The Twilight Mist backdrop features a beautiful blend of colors, perfect for evening or twilight-themed shoots.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 13,
@@ -280,7 +567,31 @@ export const products = [
         image: product13,
         inStock: true,
         description: "Experience the depth of color with the Midnight Blue backdrop, ideal for dramatic portraits and artistic photography.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 14,
@@ -295,7 +606,31 @@ export const products = [
         image: product14,
         inStock: true,
         description: "The Silver Lining backdrop offers a unique gradient effect, creating a stunning visual for your projects.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 15,
@@ -310,7 +645,31 @@ export const products = [
         image: product15,
         inStock: true,
         description: "Add warmth to your scenes with the Warm Amber backdrop, featuring rich tones and a textured finish.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 16,
@@ -325,7 +684,31 @@ export const products = [
         image: product16,
         inStock: false,
         description: "Dive into creativity with the Ocean Depths backdrop, featuring swirling patterns that evoke the sea.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 17,
@@ -340,7 +723,31 @@ export const products = [
         image: product17,
         inStock: true,
         description: "Capture the essence of nature with the Pine Forest backdrop, featuring lush green tones and textures.",
-        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition."
+        returnPolicy: "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+        variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
     },
     {
         id: 18,
@@ -357,7 +764,31 @@ export const products = [
         description:
           "Bring the essence of a sunlit countryside into your shoot with the Yellow Fields Painted Canvas Backdrop. This large, solid-textured canvas radiates vibrant yellow hues reminiscent of endless fields under a bright sky, infusing warmth and energy into any creative project.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 19,
@@ -374,7 +805,31 @@ export const products = [
         description:
           "Delicate and dreamy, the Almond Cloud Patches Painted Canvas Backdrop offers a refined blend of soft almond hues interwoven with whimsical cloud patterns—perfect for evoking a serene yet dynamic atmosphere.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 20,
@@ -391,7 +846,31 @@ export const products = [
         description:
           "Elevate your visuals with the Creamy Dreamy Painted Canvas Backdrop, featuring luxurious creamy tones and a subtle, ethereal finish. Ideal for portraits, weddings, or any project that seeks a soft, dreamy ambiance.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 21,
@@ -408,7 +887,31 @@ export const products = [
         description:
           "Inject a burst of playful energy into your shoot with the Crush Cramsicle Painted Canvas Backdrop. Its bold, refreshing hues evoke the cool, fun spirit of a classic creamsicle treat—ideal for lively, creative projects.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 22,
@@ -425,7 +928,31 @@ export const products = [
         description:
           "Experience the enchanting allure of dusk with the Drak Magic Hour Painted Canvas Backdrop. Rich, deep tones and a mystical finish capture the magical moment of twilight—perfect for dramatic, atmospheric shoots.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 23,
@@ -442,7 +969,31 @@ export const products = [
         description:
           "Step into a hidden oasis with the Secret Garden Painted Canvas Backdrop. Intricate details and lush tones evoke the charm of a secluded garden—perfect for creating romantic and whimsical scenes.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 24,
@@ -459,7 +1010,31 @@ export const products = [
         description:
           "Embrace a playful aesthetic with the Polka Dot Paradise Painted Canvas Backdrop. Its bold pattern of cheerful polka dots transforms any space into a fun, artistic haven—ideal for quirky and vibrant projects.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 25,
@@ -476,7 +1051,31 @@ export const products = [
         description:
           "Capture the radiant energy of a summer day with the Sunflower Field Painted Canvas Backdrop. Its vibrant yellow tones and natural textures evoke endless fields of blooming sunflowers, adding warmth to every shot.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 26,
@@ -493,7 +1092,31 @@ export const products = [
         description:
           "Infuse your shoot with a breezy, coastal vibe using the Sandy Toes Painted Canvas Backdrop. Soft, sandy hues and subtle textures evoke the relaxed spirit of a beach day—ideal for creating a laid-back atmosphere.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 27,
@@ -510,7 +1133,31 @@ export const products = [
         description:
           "Add a touch of sophisticated warmth to your scenes with the Mocha Magic Painted Canvas Backdrop. Rich mocha hues and a refined texture create a luxurious setting for artistic and elegant projects.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 28,
@@ -527,7 +1174,31 @@ export const products = [
         description:
           "Dive into tranquility with the Blue Sea Painted Canvas Backdrop. Cool blue tones and fluid patterns evoke the serene beauty of ocean waves, setting a calm, aquatic mood for your projects.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 29,
@@ -544,7 +1215,30 @@ export const products = [
         description:
           "Set the mood with the captivating glow of the Sunset Painted Canvas Backdrop. Its vibrant gradients and warm hues capture the fleeting beauty of dusk, perfect for dramatic, emotive visuals.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 30,
@@ -561,7 +1255,31 @@ export const products = [
         description:
           "Introduce a whimsical twist to your project with the Tipsy Tea Painted Canvas Backdrop. Its quirky blend of soft hues and artistic patterns evokes the charm of a playful tea party—ideal for unconventional shoots.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+         variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 31,
@@ -578,7 +1296,31 @@ export const products = [
         description:
           "Ground your visuals in natural elegance with the Clay Stone Cliff Painted Canvas Backdrop. Earthy clay tones and rugged textures evoke the timeless majesty of stone cliffs, adding depth and character to any scene.",
         returnPolicy:
-          "Returns are accepted within 30 days of rental. Item must be in original condition."
+          "Returns are accepted within 30 days of rental. Item must be in original condition.",
+
+          variants : [
+  // Single-sided
+  { size: "6 x 9", price: 95500, type: "single" },
+  { size: "6 x 12", price: 120000, type: "single" },
+  { size: "6 x 15", price: 165000, type: "single" },
+  { size: "7 x 9", price: 115000, type: "single" },
+  { size: "7 x 12", price: 150000, type: "single" },
+  { size: "7 x 15", price: 180000, type: "single" },
+  { size: "8 x 10", price: 145000, type: "single" },
+  { size: "8 x 12", price: 175000, type: "single" },
+  { size: "8 x 15", price: 195000, type: "single" },
+
+  // Double-sided
+  { size: "6 x 9", price: 145000, type: "double" },
+  { size: "6 x 12", price: 170000, type: "double" },
+  { size: "6 x 15", price: 215000, type: "double" },
+  { size: "7 x 9", price: 165500, type: "double" },
+  { size: "7 x 12", price: 200000, type: "double" },
+  { size: "7 x 15", price: 230000, type: "double" },
+  { size: "8 x 10", price: 195000, type: "double" },
+  { size: "8 x 12", price: 225000, type: "double" },
+  { size: "8 x 15", price: 245000, type: "double" }
+]
       },
       {
         id: 32,

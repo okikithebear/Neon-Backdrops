@@ -78,9 +78,23 @@ const Shop = () => {
                 />
                 <h1 className="text-purple-600 mb-2">{product.type}</h1>
                 <h2 className="font-bold text-gray-800 mb-3">{product.name}</h2>
-                <p className="text-xl font-bold text-purple-600">
-                  ₦{formatCurrency(product.price)}
-                </p>
+                <div className="absolute top-3 left-3 bg-purple-600 bg-opacity-90 text-white text-[11px] sm:text-xs font-medium px-3 py-1 rounded-full shadow-md tracking-wide">
+              Size: 6×9 – 8×12 in
+            </div>
+                {product.variants && product.variants.length > 0 ? (
+  <p className="text-lg font-semibold text-purple-600">
+    ₦{formatCurrency(
+      Math.min(...product.variants.map((v) => v.price))
+    )} – ₦{formatCurrency(
+      Math.max(...product.variants.map((v) => v.price))
+    )}
+  </p>
+) : (
+  <p className="text-xl font-bold text-purple-600">
+    ₦{formatCurrency(product.price)}
+  </p>
+)}
+
                 <button
                   className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
                     product.inStock

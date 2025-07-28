@@ -68,35 +68,45 @@ const Rental = () => {
   </div>
 
       {/* Product Grid with Responsive Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {currentProducts.map((product) => (
-          <Link to={`/product/${product.id}`} key={product.id}>
-            <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
-              <img
-                src={product.image}
-                alt={product.name}
-               className="w-full h-[500px] sm:h-[350px] lg:h-[400px] object-cover mb-4"
-              />
-              <h2 className="text-black mb-3">{product.name}</h2>
-              <p className="text-gray-600 mb-2">{product.type}</p>
-              <p className="text-xl font-bold text-purple-500">
-                ₦{formatCurrency(product.price)}
-              </p>
-              <button
-                    className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
-                      product.inStock
-                        ? "bg-purple-500 hover:bg-purple-600"
-                        : "bg-gray-300 cursor-not-allowed"
-                    }`}
-                    disabled={!product.inStock}
-                  >
-                    <AiOutlineShoppingCart className="mr-2" />
-                    {product.inStock ? "Add to Cart" : "Out of Stock"}
-                  </button>
-            </div>
-          </Link>
-        ))}
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {currentProducts.map((product) => (
+    <Link to={`/product/${product.id}`} key={product.id}>
+      <div className="border border-gray-200 rounded-lg p-4 bg-white shadow-lg">
+        {/* Image with Size Badge */}
+        <div className="relative w-full h-[500px] sm:h-[350px] lg:h-[400px] mb-4">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover rounded-md"
+          />
+          {/* Size Badge */}
+          <div className="absolute top-3 left-3 bg-purple-600 bg-opacity-90 text-white text-[11px] sm:text-xs font-medium px-3 py-1 rounded-full shadow-md tracking-wide">
+            Size: 6×9 – 8×12 in
+          </div>
+        </div>
+
+        <h2 className="text-black mb-3">{product.name}</h2>
+        <p className="text-gray-600 mb-2">{product.type}</p>
+
+        <p className="text-xl font-bold text-purple-500">
+          ₦{formatCurrency(product.price)}
+        </p>
+        <button
+          className={`flex items-center justify-center px-6 py-3 w-full text-white font-bold rounded-lg ${
+            product.inStock
+              ? "bg-purple-500 hover:bg-purple-600"
+              : "bg-gray-300 cursor-not-allowed"
+          }`}
+          disabled={!product.inStock}
+        >
+          <AiOutlineShoppingCart className="mr-2" />
+          {product.inStock ? "Add to Cart" : "Out of Stock"}
+        </button>
       </div>
+    </Link>
+  ))}
+</div>
+
 
       {/* Pagination Component */}
       <Pagination 

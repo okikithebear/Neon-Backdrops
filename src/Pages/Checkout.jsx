@@ -222,11 +222,17 @@ const CheckoutPage = () => {
                       <p>Total: {formatCurrency(item.price * item.rentalDuration * item.quantity)}</p>
                     </div>
                   ) : (
-                    <div className="text-sm text-gray-500">
-                      <p>Price: {formatCurrency(item.price)}</p>
-                      <p>Quantity: {item.quantity}</p>
-                      <p>Total: {formatCurrency(item.discountedPrice * item.quantity)}</p>
-                    </div>
+                    <div className="text-sm text-gray-500 space-y-1">
+                    <p>Price: {formatCurrency(item.price)}</p>
+                    <p>Quantity: {item.quantity}</p>
+                    {typeof item.size !== "undefined" && item.size !== null && (
+                      <p>
+                        <span className="font-medium">Size:</span> {item.size}
+                      </p>
+                    )}
+                    <p>Total: {formatCurrency(item.discountedPrice * item.quantity)}</p>
+                  </div>
+                  
                   )}
                 </div>
               </div>

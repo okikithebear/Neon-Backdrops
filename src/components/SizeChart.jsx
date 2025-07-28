@@ -1,28 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
+const SizeChart = ({ sizes, onSelectSize }) => {
+  const [selectedSize, setSelectedSize] = useState("");
 
-const SizeChart = ({ sizes }) => (
-  <div>
-   
-    <table className="w-full border-collapse">
-      <thead>
-        <tr>
-          <th className="border p-2">Size</th>
-          <th className="border p-2">width</th>
-          <th className="border p-2">height</th>
-        </tr>
-      </thead>
-      <tbody>
+  const handleChange = (e) => {
+    const selected = e.target.value;
+    setSelectedSize(selected);
+    if (onSelectSize) {
+      onSelectSize(selected);
+    }
+  };
+
+  return (
+    <div className="w-full max-w-sm">
+      <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="size">
+        Choose Size
+      </label>
+      <select
+        id="size"
+        value={selectedSize}
+        onChange={handleChange}
+        className="block w-full px-4 py-3 border border-gray-300 rounded-md text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+      >
+        <option value="" disabled>Choose size</option>
         {sizes.map((size, index) => (
-          <tr key={index}>
-            <td className="border p-2">{size.label}</td>
-            <td className="border p-2">{size.width}</td>
-            <td className="border p-2">{size.height}</td>
-          </tr>
+          <option key={index} value={size.label}>
+            {size.label}
+          </option>
         ))}
-      </tbody>
-    </table>
-  </div>
-);
+      </select>
+    </div>
+  );
+};
 
 export default SizeChart;

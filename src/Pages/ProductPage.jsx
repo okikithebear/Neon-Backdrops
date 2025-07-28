@@ -6,7 +6,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineInfo } from "react-icons/md";
 import Breadcrumb from "../components/Breadcrumb";
 import { CartContext } from "../Context/CartContext";
-import SizeChart from "../components/SizeChart";
+import { motion } from 'framer-motion';
+
+import { Menu } from "@headlessui/react"; // Place this at the top
+// import SizeChart from "../components/SizeChart";
 
 // Main ProductPage Component
 const ProductPage = () => {
@@ -14,14 +17,22 @@ const ProductPage = () => {
   const navigate = useNavigate();
   
   // Find the product based on the id parameter
-  const product = products.find((p) => p.id === parseInt(id));
+   const product = products.find((p) => p.id === parseInt(id));
+  // default to the first variant
+  const [selectedVariant, setSelectedVariant] = useState(
+    product?.variants?.[0] ?? { size: product.size, price: product.price }
+  );
+  
+
+  // const [selectedSize, setSelectedSize] = useState(null);
+
   
   // Local state management
   const [quantity, setQuantity] = useState(1);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [showWarning, setShowWarning] = useState(false);
-  const [showSizeChart, setShowSizeChart] = useState(false);
+  // const [showSizeChart, setShowSizeChart] = useState(false);
 
   // Access addToCart function from global CartContext
   const { addToCart } = useContext(CartContext);
@@ -36,20 +47,22 @@ const ProductPage = () => {
     return <div>Product not found</div>;
   }
 
-  // Toggle the Size Chart modal
-  const toggleSizeChart = () => {
-    setShowSizeChart((prev) => !prev);
-  };
+  // // Toggle the Size Chart modal
+  // const toggleSizeChart = () => {
+  //   setShowSizeChart((prev) => !prev);
+  // };
+
+  // const toggleSizeChart = () => {
+  //   setIsSizeChartVisible(!isSizeChartVisible);
+  // };
 
   // Data for the Size Chart
-  const sizeChartData = {
-    sizes: [
-      { label: "Small", width: "7x12", height: "7ft" },
-      { label: "Medium", width: "8x8", height: "8ft" },
-      { label: "Large", width: "10x10", height: "10ft" },
-      { label: "X-Large", width: "12x12", height: "12ft" },
-    ],
-  };
+  
+  // const handleSizeChange = (e) => {
+  //   const newSize = e.target.value;
+  //   const variant = product.variants.find((v) => v.size === newSize);
+  //   setSelectedVariant(variant);
+  // };
 
   // Update quantity ensuring a minimum of 1
   const handleQuantityChange = (e) => {
@@ -147,6 +160,9 @@ const ProductPage = () => {
     ...product,
     type: normalizedType, // normalized to lowercase
     quantity: parseInt(quantity),
+    size: selectedVariant.size,
+    price: selectedVariant.price,
+    // selectedSize: selectedSize ? selectedSize.label : null,
     rentalDates: normalizedType === "rental" ? { start: startDate, end: endDate } : null,
     rentalDuration: normalizedType === "rental" ? rentalDuration : null,
     // Optionally, calculate rentalPrice on the fly if needed
@@ -168,6 +184,10 @@ const ProductPage = () => {
               alt={product.name}
               className="w-full h-[550px] sm:h-[650px] lg:h-[700px] rounded-lg shadow-lg object-cover"
             />
+              {/* Range Badge */}
+              <div className="absolute top-3 left-3 bg-purple-600 bg-opacity-90 text-white text-[11px] sm:text-xs font-medium px-3 py-1 rounded-full shadow-md tracking-wide">
+              Size: 6×9 – 8×12 in
+            </div>
           </div>
         </div>
 
@@ -187,11 +207,86 @@ const ProductPage = () => {
             </div>
             <span className="text-gray-600">(20 Reviews)</span>
           </div>
+          
 
-          {/* Price */}
-          <p className="text-2xl font-bold text-green-600">
-            ₦{formatCurrency(product.discountedPrice || product.price)}
-          </p>
+          {/* SIZE SELECTOR */}
+{product.type?.toLowerCase() !== "rental" && Array.isArray(product.variants) && (
+  <div className="mt-4">
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+      Choose Size:
+    </label>
+
+    <Menu as="div" className="relative inline-block w-full text-left">
+      <div>
+        <Menu.Button className="inline-flex justify-between items-center w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 shadow-md hover:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+          {selectedVariant.size} – ₦{formatCurrency(selectedVariant.price)}
+          <svg
+            className="ml-2 h-5 w-5 text-gray-500"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.06"
+              clipRule="evenodd"
+            />
+          </svg>
+        </Menu.Button>
+      </div>
+
+      <Menu.Items className="absolute mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-20 max-h-60 overflow-y-auto">
+        <div className="py-1">
+          {/* Grouped Items */}
+          {["single", "double"].map(type => {
+            const filtered = product.variants.filter(v => v.type === type);
+            if (filtered.length === 0) return null;
+
+            return (
+              <div key={type}>
+                <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase bg-gray-100">
+                  {type === "single" ? "Single-Sided" : "Double-Sided"}
+                </div>
+                {filtered.map((variant, index) => (
+                  <Menu.Item key={`${type}-${index}`}>
+                    {({ active }) => (
+                      <button
+                        onClick={() => setSelectedVariant(variant)}
+                        className={`${
+                          active ? "bg-indigo-100 text-indigo-700" : ""
+                        } w-full text-left px-4 py-2 text-sm font-medium text-gray-800 hover:bg-indigo-50 transition-colors`}
+                      >
+                        {variant.size} – ₦{formatCurrency(variant.price)}
+                      </button>
+                    )}
+                  </Menu.Item>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      </Menu.Items>
+    </Menu>
+
+    {/* Show the selected size */}
+    <motion.div
+      initial={{ opacity: 0, y: 4 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="mt-2 text-sm text-gray-700 font-medium"
+    >
+      Selected Size:{" "}
+      <span className="text-purple-600 font-semibold">{selectedVariant.size}</span>
+    </motion.div>
+  </div>
+)}
+
+
+      {/* PRICE */}
+      <p className="text-2xl font-bold text-green-600 mt-4">
+        ₦{formatCurrency(selectedVariant.price)}
+      </p>
 
           {/* Stock Availability */}
           <p
@@ -226,6 +321,10 @@ const ProductPage = () => {
               className="border border-gray-300 rounded-lg p-2 w-16"
             />
           </div>
+         
+
+  
+
 
           {/* Rental Section */}
           {product.type === "Rental" && (
@@ -312,66 +411,7 @@ const ProductPage = () => {
         </div>
       </div>
 
-      {/* Size Chart Button */}
-      <button
-        onClick={toggleSizeChart}
-        className="text-purple-500 font-semibold inline-flex items-center space-x-1 hover:text-purple-700 hover:underline hover:shadow-lg transition-all duration-200 ease-in-out mb-4 mt-8"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2V6zm0 8h2v2h-2v-2z" />
-        </svg>
-        <span>View Size Chart</span>
-      </button>
-
-      {/* Size Chart Modal */}
-      {showSizeChart && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-70 flex justify-center items-center z-50 transition-opacity duration-300 ease-in-out">
-          <div className="bg-white p-8 rounded-xl max-w-lg w-full shadow-xl relative overflow-hidden animate-fadeIn border-t-4 border-purple-500">
-            {/* Close Button */}
-            <button
-              onClick={toggleSizeChart}
-              className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition duration-200 ease-in-out"
-              aria-label="Close"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            {/* Header with Icon */}
-            <div className="flex items-center justify-center mb-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-blue-500 mr-2"
-                fill="purple"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2V6zm0 8h2v2h-2v-2z" />
-              </svg>
-              <h3 className="text-2xl font-semibold text-gray-700">Size Chart</h3>
-            </div>
-            {/* Size Chart Content */}
-            <div className="bg-gray-100 p-4 rounded-lg text-center">
-              <SizeChart sizes={sizeChartData.sizes} />
-            </div>
-          </div>
-        </div>
-      )}
+     
 
       {/* Customer Reviews Section */}
       <div className="mt-10">

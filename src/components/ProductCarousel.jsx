@@ -89,13 +89,17 @@ const ProductCarousel = () => {
                 className="relative w-full bg-white cursor-pointer overflow-hidden rounded-lg"
                 onClick={() => handleProductClick(product.id)}
               >
-                <div className="relative w-full h-[500px] sm:h-[350px] lg:h-[400px]">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-full object-cover rounded-t-lg"
-                  />
-                </div>
+               <div className="relative w-full h-[500px] sm:h-[350px] lg:h-[400px]">
+  <img
+    src={product.image}
+    alt={product.title}
+    className="w-full h-full object-cover rounded-t-lg"
+  />
+  <div className="absolute top-3 left-3 bg-purple-600 bg-opacity-90 text-white text-[11px] sm:text-xs font-medium px-3 py-1 rounded-full shadow-md tracking-wide z-10">
+    Size: 6×9 – 8×12 in
+  </div>
+</div>
+
 
                 {/* Product Info */}
                 <div className="p-4 text-start bg-gray-200 rounded-b-lg shadow-md">
@@ -103,9 +107,20 @@ const ProductCarousel = () => {
                   <p className="text-base text-purple-600 mt-1">{product.type}</p>
                   <p className="text-base text-black mt-1">{product.name}</p>
                   <div className="mt-2">
-                    <p className="text-xl font-bold text-purple-600">
-                      {formatCurrency(product.price)}
-                    </p>
+                  {product.variants && product.variants.length > 0 ? (
+  <p className="text-lg font-semibold text-purple-600">
+    {formatCurrency(
+      Math.min(...product.variants.map((v) => v.price))
+    )} – {formatCurrency(
+      Math.max(...product.variants.map((v) => v.price))
+    )}
+  </p>
+) : (
+  <p className="text-xl font-bold text-purple-600">
+    ₦{formatCurrency(product.price)}
+  </p>
+)}
+
                   </div>
                 </div>
               </div>
