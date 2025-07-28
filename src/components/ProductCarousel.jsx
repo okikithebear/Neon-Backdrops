@@ -116,6 +116,7 @@ const ProductCarousel = () => {
         </Swiper>
       </div>
     </section>
+    
   );
 };
 
