@@ -15,6 +15,7 @@ const CartPage = () => {
             image: item.image,
             type: item.type,
             size: item.size,
+           variantType: item.variantType, 
             quantity: item.quantity,
             price: item.price,
             discountedPrice: item.discountedPrice,
@@ -66,6 +67,12 @@ const CartPage = () => {
                                                 <span className="font-medium">Size:</span> {item.size}
                                             </p>
                                         )}
+{typeof item.variantType !== "undefined" && item.variantType !== null && (
+  <p>
+    <span className="font-medium">Variant Type:</span>{" "}
+    {item.variantType === "single" ? "Single-Sided" : "Double-Sided"}
+  </p>
+)}
 
                                         {item.isRental ? (
                                             <>

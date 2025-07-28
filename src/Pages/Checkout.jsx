@@ -9,18 +9,19 @@ import emptyCartImage from '../Assets/Images/shopping-cart.png';
 import { db } from '../firebaseConfig';
 import emailjs from 'emailjs-com';
 
-// Function to format currency
 const formatCurrency = (number) =>
   new Intl.NumberFormat('en-US', { style: 'currency', currency: 'NGN', minimumFractionDigits: 0 }).format(number);
 
-// Helper to build a summary of order items with rental details included
 const buildOrderItemsSummary = (cartItems) => {
   return cartItems
     .map(item => {
+      const variant = item.variantType
+        ? `, Variant: ${item.variantType === "single" ? "Single-Sided" : "Double-Sided"}`
+        : "";
       if (item.type === "rental") {
-        return `${item.name} (Rental: ${item.rentalDates.start} to ${item.rentalDates.end}, Duration: ${item.rentalDuration} days, Qty: ${item.quantity})`;
+        return `${item.name} (Rental: ${item.rentalDates.start} to ${item.rentalDates.end}, Duration: ${item.rentalDuration} days, Qty: ${item.quantity}${variant})`;
       } else {
-        return `${item.name} (Qty: ${item.quantity})`;
+        return `${item.name} (Qty: ${item.quantity}${variant})`;
       }
     })
     .join(', ');
@@ -30,7 +31,6 @@ const sendConfirmationEmail = async (orderDetails) => {
   const templateParams = {
     customer_name: orderDetails.name,
     customer_email: orderDetails.email,
-    // Use the built summary string so rental details are included in the email
     order_items: buildOrderItemsSummary(orderDetails.cart),
     order_total: formatCurrency(orderDetails.total),
     order_id: orderDetails.id,
@@ -72,7 +72,6 @@ const CheckoutPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Fetch user info on mount
   useEffect(() => {
     const auth = getAuth();
     const user = auth.currentUser;
@@ -103,7 +102,6 @@ const CheckoutPage = () => {
 
   const handleOrderSave = async () => {
     try {
-      // Include the userId in the order document
       await addDoc(collection(db, 'orders'), {
         userId: userId,
         name: formData.name,
@@ -113,7 +111,6 @@ const CheckoutPage = () => {
         city: formData.city,
         country: formData.country,
         phone: formData.phone,
-        // Save the full cart with rental details if applicable
         cart: cart.map(item => ({
           id: item.id,
           name: item.name,
@@ -122,6 +119,8 @@ const CheckoutPage = () => {
           type: item.type,
           rentalDates: item.type === "rental" ? item.rentalDates : null,
           rentalDuration: item.type === "rental" ? item.rentalDuration : null,
+          size: item.size || null,
+          variantType: item.variantType || null,
         })),
         total: calculateTotal(),
         timestamp: new Date(),
@@ -144,11 +143,10 @@ const CheckoutPage = () => {
     onSuccess: async () => {
       if (isFormValid) {
         setLoading(true);
-        // Include rental details in the order details mapping
         const orderDetails = {
           name: formData.name,
           email: userEmail,
-          userId: userId, // Include the user ID here
+          userId: userId,
           cart: cart.map(item => ({
             id: item.id,
             name: item.name,
@@ -157,6 +155,8 @@ const CheckoutPage = () => {
             type: item.type,
             rentalDates: item.type === "rental" ? item.rentalDates : null,
             rentalDuration: item.type === "rental" ? item.rentalDuration : null,
+            size: item.size || null,
+            variantType: item.variantType || null,
           })),
           total: calculateTotal(),
           address: formData.address,
@@ -223,16 +223,21 @@ const CheckoutPage = () => {
                     </div>
                   ) : (
                     <div className="text-sm text-gray-500 space-y-1">
-                    <p>Price: {formatCurrency(item.price)}</p>
-                    <p>Quantity: {item.quantity}</p>
-                    {typeof item.size !== "undefined" && item.size !== null && (
-                      <p>
-                        <span className="font-medium">Size:</span> {item.size}
-                      </p>
-                    )}
-                    <p>Total: {formatCurrency(item.discountedPrice * item.quantity)}</p>
-                  </div>
-                  
+                      <p>Price: {formatCurrency(item.price)}</p>
+                      <p>Quantity: {item.quantity}</p>
+                      {typeof item.size !== "undefined" && item.size !== null && (
+                        <p>
+                          <span className="font-medium">Size:</span> {item.size}
+                        </p>
+                      )}
+                      {typeof item.variantType !== "undefined" && item.variantType !== null && (
+                        <p>
+                          <span className="font-medium">Variant Type:</span>{" "}
+                          {item.variantType === "single" ? "Single-Sided" : "Double-Sided"}
+                        </p>
+                      )}
+                      <p>Total: {formatCurrency(item.discountedPrice * item.quantity)}</p>
+                    </div>
                   )}
                 </div>
               </div>
@@ -242,6 +247,7 @@ const CheckoutPage = () => {
               <p className="text-xl font-mulish text-green-500">{formatCurrency(calculateTotal())}</p>
             </div>
           </div>
+
           <div className="bg-gray-50 shadow-lg rounded-lg p-6">
             <h2 className="text-2xl font-semibold text-gray-700 mb-4">Shipping Information</h2>
             <form className="space-y-4">
@@ -262,6 +268,7 @@ const CheckoutPage = () => {
               ))}
             </form>
           </div>
+
           <div className="mt-4 flex justify-between">
             <button
               onClick={() => navigate('/cart')}

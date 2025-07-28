@@ -22,7 +22,7 @@ const ProductPage = () => {
   const [selectedVariant, setSelectedVariant] = useState(
     product?.variants?.[0] ?? { size: product.size, price: product.price }
   );
-  
+ 
 
   // const [selectedSize, setSelectedSize] = useState(null);
 
@@ -161,6 +161,7 @@ const ProductPage = () => {
     type: normalizedType, // normalized to lowercase
     quantity: parseInt(quantity),
     size: selectedVariant.size,
+    variantType: selectedVariant.type,
     price: selectedVariant.price,
     // selectedSize: selectedSize ? selectedSize.label : null,
     rentalDates: normalizedType === "rental" ? { start: startDate, end: endDate } : null,
@@ -281,6 +282,18 @@ const ProductPage = () => {
     </motion.div>
   </div>
 )}
+<motion.div
+  initial={{ opacity: 0, y: 4 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.4, ease: "easeOut" }}
+  className="mt-1 text-sm text-gray-700 font-medium"
+>
+  Selected Type:{" "}
+  <span className="text-indigo-600 font-semibold capitalize">
+    {selectedVariant.type}
+  </span>
+</motion.div>
+
 
 
       {/* PRICE */}
